@@ -1,0 +1,78 @@
+{
+    "flutter": {
+        "platforms": {
+            "android": {
+                "buildConfigurations": {
+                    "src/development": {
+                        "projectId": "boilerplate-dev-f79bb",
+                        "appId": "1:735131000041:android:8d25df667eb0097e7aa478",
+                        "fileOutput": "android/app/src/development/google-services.json"
+                    },
+                    ".": {
+                        "projectId": "boilerplate-76495",
+                        "appId": "1:757683866052:android:8e9004455d207d5917fc91",
+                        "fileOutput": "android/app/google-services.json"
+                    }
+                }
+            },
+            "ios": {
+                "buildConfigurations": {
+                    "Debug-development": {
+                        "projectId": "boilerplate-dev-f79bb",
+                        "appId": "1:735131000041:ios:162e73f00715082d7aa478",
+                        "uploadDebugSymbols": false,
+                        "fileOutput": "ios/flavors/dev/GoogleService-Info.plist"
+                    },
+                    "Profile-development": {
+                        "projectId": "boilerplate-dev-f79bb",
+                        "appId": "1:735131000041:ios:162e73f00715082d7aa478",
+                        "uploadDebugSymbols": false,
+                        "fileOutput": "ios/flavors/dev/GoogleService-Info.plist"
+                    },
+                    "Release-development": {
+                        "projectId": "boilerplate-dev-f79bb",
+                        "appId": "1:735131000041:ios:162e73f00715082d7aa478",
+                        "uploadDebugSymbols": false,
+                        "fileOutput": "ios/flavors/dev/GoogleService-Info.plist"
+                    },
+                    "Debug-production": {
+                        "projectId": "boilerplate-76495",
+                        "appId": "1:757683866052:ios:a08c4b2b218fb9a017fc91",
+                        "uploadDebugSymbols": false,
+                        "fileOutput": "ios/Runner/GoogleService-Info.plist"
+                    },
+                    "Profile-production": {
+                        "projectId": "boilerplate-76495",
+                        "appId": "1:757683866052:ios:a08c4b2b218fb9a017fc91",
+                        "uploadDebugSymbols": false,
+                        "fileOutput": "ios/Runner/GoogleService-Info.plist"
+                    },
+                    "Release-production": {
+                        "projectId": "boilerplate-76495",
+                        "appId": "1:757683866052:ios:a08c4b2b218fb9a017fc91",
+                        "uploadDebugSymbols": false,
+                        "fileOutput": "ios/Runner/GoogleService-Info.plist"
+                    }
+                }
+            },
+            "dart": {
+                "lib/firebase_options_dev.dart": {
+                    "projectId": "boilerplate-dev-f79bb",
+                    "configurations": {
+                        "android": "1:735131000041:android:8d25df667eb0097e7aa478",
+                        "ios": "1:735131000041:ios:162e73f00715082d7aa478",
+                        "web": "1:735131000041:web:5bd3a0eabe6313547aa478"
+                    }
+                },
+                "lib/firebase_options.dart": {
+                    "projectId": "boilerplate-76495",
+                    "configurations": {
+                        "android": "1:757683866052:android:8e9004455d207d5917fc91",
+                        "ios": "1:757683866052:ios:a08c4b2b218fb9a017fc91",
+                        "web": "1:757683866052:web:356ea684df2a618317fc91"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,128 @@
+{
+    "@@locale": "en",
+    "landingPageTitle": "App Shack",
+    "@landingPageTitle": {
+        "description": "Text shown in the appbar of the landing page"
+    },
+    "navigationHome": "Home",
+    "@navigationHome": {
+        "description": "Text shown in the navigation for the home page"
+    },
+    "navigationSettings": "Settings",
+    "@navigationSettings": {
+        "description": "Text shown in the navigation for the settings page"
+    },
+    "settingsPageTitle": "Settings",
+    "@settingsPageTitle": {
+        "description": "Text shown in the appbar of the settings page"
+    },
+    "settingsThemeTitle": "Theme",
+    "@settingsThemeTitle": {
+        "description": "Title for the theme settings"
+    },
+    "counterAppBarTitle": "App Shack",
+    "@counterAppBarTitle": {
+        "description": "Text shown in the AppBar of the Counter Page"
+    },
+    "generalServerError": "Something went wrong.",
+    "@generalServerError": {
+        "description": "Text shown when a general server error occurs"
+    },
+    "backButtonText": "Back",
+    "@backButtonText": {
+        "description": "Text shown in the appbar back button"
+    },
+    "noResults": "No results found.",
+    "@noResults": {
+        "description": "Text shown when no results are found"
+    },
+    "emailEmpty": "Email is required.",
+    "@emailEmpty": {
+      "description": "Text shown when the email field is empty"
+    },
+    "createAccountAction": "Create Account",
+    "@createAccountAction": {
+      "description": "Text shown as the action for creating an account"
+    },
+    "createAccountPageTitle": "Create Account",
+    "@createAccountPageTitle": {
+      "description": "Text shown in the appbar of the create account page"
+    },
+    "createAccountSubtitle": "Create an account to get started.",
+      "@createAccountSubtitle": {
+          "description": "Text shown as a subtitle on the create account page"
+      },
+    "createAccountButton": "Create Account",
+    "@createAccountButton": {
+      "description": "Text shown on the create account button"
+    },
+    "emailLabelText": "Email",
+    "@emailLabelText": {
+      "description": "Text shown as the label for the email input"
+    },
+    "passwordLabelText": "Password",
+    "@passwordLabelText": {
+      "description": "Text shown as the label for the password input"
+    },
+    "passwordCriteriaTitle": "The password must contain:",
+    "@passwordCriteriaTitle": {
+      "description": "Text shown as the title for the password criteria"
+    },
+    "passwordCriteriaCharacters": "At least 8 characters",
+    "@passwordCriteriaCharacters": {
+      "description": "Text shown as the character password criteria"
+    },
+    "passwordCriteriaLetter": "At least 1 letter",
+    "@passwordCriteriaLetter": {
+      "description": "Text shown as the letter password criteria"
+    },
+    "passwordCriteriaNumber": "At least 1 number",
+    "@passwordCriteriaNumber": {
+      "description": "Text shown as the number password criteria"
+    },
+    "policyLinksInfoPart1": "By creating an account, you agree to our ",
+    "@policyLinksInfoPart1": {
+      "description": "Text shown as the first part of the policy links info"
+    },
+    "policyLinksInfoPart2": " and ",
+    "@policyLinksInfoPart2": {
+      "description": "Text shown as the second part of the policy links info"
+    },
+    "policyLinksTerms": "Terms of Service",
+    "@policyLinksTerms": {
+      "description":  "Text shown as the terms policy link"
+    },
+    "policyLinksDataHandling": "Data Handling",
+    "@policyLinksDataHandling": {
+      "description": "Text shown as the data handling policy link"
+    },
+    "loginAction": "Login",
+    "@loginAction": {
+      "description": "Text shown as the action for logging in"
+    },
+    "loginPageTitle": "Login",
+    "@loginPageTitle": {
+      "description": "Text shown in the appbar of the login page"
+    },
+    "loginFormCallToAction": "Login",
+    "@loginFormCallToAction": {
+      "description": "Text shown as the call to action for the login form"
+    },
+    "invalidCredentials": "Invalid credentials.",
+    "@invalidCredentials": {
+      "description": "Text shown when the credentials are invalid"
+    },
+    "emailUnverified": "Email is unverified.",
+    "@emailUnverified": {
+      "description": "Text shown when the email is unverified"
+    },
+    "passwordEmpty": "Password is required.",
+    "@passwordEmpty": {
+      "description": "Text shown when the password field is empty"
+    },
+    "enableAnalyticsTitle": "Enable analytics",
+    "enableAnalyticsSubtitle": "Allow us to collect and analyze data so we can improve the app.",
+    "enableAnalyticsAction": "Enable analytics",
+    "skipAnalyticsAction": "Skip",
+    "logOutAction": "Log out"
+}

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "757683866052",
+    "project_id": "boilerplate-76495",
+    "storage_bucket": "boilerplate-76495.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757683866052:android:8e9004455d207d5917fc91",
+        "android_client_info": {
+          "package_name": "se.appshack.asboilerplateflutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC40rOJW0IcCW1tWUV9ojTLUu5BXgpJiIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

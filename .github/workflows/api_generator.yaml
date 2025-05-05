@@ -1,0 +1,92 @@
+name: API Generator
+
+on:
+  repository_dispatch:
+    types: [schema_released]
+  workflow_dispatch:
+
+env:
+  SERVER_REPO_OWNER: app-shack
+  SERVER_REPO_NAME: as-boilerplate-backend
+  API_PATH: packages/app_api
+
+jobs:
+  generate-api:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ${{ env.API_PATH }}
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "11"
+
+      - name: Download Schema
+        run: |
+          OWNER=$SERVER_REPO_OWNER
+          REPO=$SERVER_REPO_NAME
+          ASSET_NAME=openapi_schema.yaml
+          TOKEN=${{ secrets.SERVER_REPO_TOKEN }}
+
+          latest_release=$(curl -s -L \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $TOKEN" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/$OWNER/$REPO/releases/latest")
+
+          asset_url=$(echo "$latest_release" | jq -r --arg name "$ASSET_NAME" '.assets[] | select(.name == $name) | .url')
+
+          if [ -z "$asset_url" ]; then
+            echo "Asset '$ASSET_NAME' not found in the latest release."
+            exit 1
+          fi
+
+          curl -L \
+            -H "Accept: application/octet-stream" \
+            -H "Authorization: Bearer $TOKEN" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "$asset_url" -o $ASSET_NAME
+
+          echo "Downloaded '$ASSET_NAME' successfully."
+
+      - name: Download Generator
+        run: |
+          wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.8.0/openapi-generator-cli-7.8.0.jar -O /tmp/openapi-generator-cli.jar
+
+      - name: Generate API
+        run: |
+          java -jar /tmp/openapi-generator-cli.jar generate \
+               -i openapi_schema.yaml \
+               -g dart-dio \
+               -c openapi_generator_config.yaml \
+               --enable-post-process-file
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          cache: true
+          cache-key: flutter-:os:-:channel:-:version:-:arch:-:hash:-${{ hashFiles('**/pubspec.lock') }}
+
+      - name: Install Dependencies
+        run: flutter pub get
+
+      - name: Run build_runner
+        run: dart pub run build_runner build --delete-conflicting-outputs
+
+      - name: Format Dart Code
+        run: dart format .
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.TRIGGER_FURTHER_WORKFLOWS_TOKEN }}
+          commit-message: "Generate api"
+          branch: api-generator
+          title: "ci: generate api"

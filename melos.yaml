@@ -1,0 +1,30 @@
+name: as_boilerplate_flutter
+
+packages:
+  - packages/*
+
+scripts:
+  build-select:
+    exec: dart run build_runner build --delete-conflicting-outputs
+    packageFilters:
+      dependsOn: build_runner
+  build:
+    run: melos run build-select --no-select
+  l10n-select:
+    exec: flutter gen-l10n
+    packageFilters:
+      dependsOn: flutter_localizations
+  l10n:
+    run: melos run l10n-select --no-select
+  test: 
+    run: melos exec --dir-exists="test" --fail-fast -- flutter test
+  analyze:
+    exec: dart analyze .
+  check-format:
+    exec: dart format . --set-exit-if-changed
+  pub-get:
+    exec: flutter pub get
+  clean:
+    exec: flutter clean
+  
+  

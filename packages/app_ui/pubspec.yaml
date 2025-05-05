@@ -1,0 +1,54 @@
+name: app_ui
+description: App UI Component Library
+publish_to: none
+
+environment:
+  sdk: ^3.6.0
+
+resolution: workspace
+
+dependencies:
+  analytics_repository:
+    path: ../analytics_repository
+  app_l10n:
+    path: ../app_l10n
+  dotted_border: ^2.1.0
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.1.0
+  intl: ^0.19.0
+  mockingjay: ^1.0.0
+  provider: ^6.1.5
+  widget_mask: ^1.0.0+0
+
+dev_dependencies:
+  build_runner: ^2.4.13
+  flutter_gen_runner: ^5.10.0
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^7.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+  fonts:
+    - family: InterTight
+      fonts:
+        - asset: assets/fonts/InterTight-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/InterTight-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/InterTight-Regular.ttf
+          weight: 400
+
+# FlutterGen configuration
+flutter_gen:
+  assets:
+    enabled: true
+    outputs:
+      package_parameter_enabled: true
+  output: lib/src/generated/
+  line_length: 80
+  integrations:
+    flutter_svg: true

@@ -1,0 +1,7 @@
+# Config options for the dart-dio generator
+pubName: app_api
+pubVersion: 0.0.1
+pubDescription: "App API"
+dateLibrary: core
+serializationLibrary: json_serializable
+equalityCheckMethod: equatable

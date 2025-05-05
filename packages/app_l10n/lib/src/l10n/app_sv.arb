@@ -1,0 +1,129 @@
+{
+    "@@locale": "sv",
+    "landingPageTitle": "App Shack",
+    "@landingPageTitle": {
+        "description": "Text shown in the appbar of the landing page"
+    },
+    "navigationHome": "Hem",
+    "@navigationHome": {
+        "description": "Text shown in the navigation for the home page"
+    },
+    "navigationSettings": "Inställningar",
+    "@navigationSettings": {
+        "description": "Text shown in the navigation for the settings page"
+    },
+    "settingsPageTitle": "Inställningar",
+    "@settingsPageTitle": {
+        "description": "Text shown in the appbar of the settings page"
+    },
+    "settingsThemeTitle": "Tema",
+    "@settingsThemeTitle": {
+        "description": "Title for the theme settings"
+    },
+    "counterAppBarTitle": "App Shack",
+    "@counterAppBarTitle": {
+        "description": "Text shown in the AppBar of the Counter Page"
+    },
+    "generalServerError": "Något gick fel.",
+    "@generalServerError": {
+        "description": "Text shown when a general server error occurs"
+    },
+    "backButtonText": "Tillbaka",
+    "@backButtonText": {
+        "description": "Text shown in the appbar back button"
+    },
+    "noResults": "Hittade inga resultat.",
+    "@noResults": {
+        "description": "Text shown when no results are found"
+    },
+    "emailEmpty": "E-postadressen får inte vara tom.",
+    "@emailEmpty": {
+        "description": "Text shown when the email field is empty"
+    },
+    "createAccountAction": "Skapa konto",
+    "@createAccountAction": {
+        "description": "Text shown in the create account action"
+    },
+    
+    "createAccountPageTitle": "Skapa konto",
+    "@createAccountPageTitle": {
+        "description": "Text shown in the appbar of the create account page"
+    },
+    "createAccountSubtitle": "Fyll i dina uppgifter för att skapa ett konto.",
+    "@createAccountSubtitle": {
+        "description": "Text shown as a subtitle on the create account page"
+    },
+    "createAccountButton": "Skapa konto",
+    "@createAccountButton": {
+        "description": "Text shown on the create account button"
+    },
+    "emailLabelText": "Email",
+    "@emailLabelText": {
+      "description": "Text shown as the label for the email input"
+    },
+    "passwordLabelText": "Password",
+    "@passwordLabelText": {
+      "description": "Text shown as the label for the password input"
+    },
+    "passwordCriteriaTitle": "Lösenordet måste innehålla:",
+    "@passwordCriteriaTitle": {
+      "description": "Text shown as the title for the password criteria"
+    },
+    "passwordCriteriaCharacters": "Minst 8 tecken",
+    "@passwordCriteriaCharacters": {
+      "description": "Text shown as the character password criteria"
+    },
+    "passwordCriteriaLetter": "Minst 1 bokstav",
+    "@passwordCriteriaLetter": {
+      "description": "Text shown as the letter password criteria"
+    },
+    "passwordCriteriaNumber": "Minst 1 siffra",
+    "@passwordCriteriaNumber": {
+      "description": "Text shown as the number password criteria"
+    },
+    "policyLinksInfoPart1": "Genom att registrera dig godkänner du våra ",
+    "@policyLinksInfoPart1": {
+      "description": "Text shown as the first part of the policy links info"
+    },
+    "policyLinksInfoPart2": " och ",
+    "@policyLinksInfoPart2": {
+      "description": "Text shown as the second part of the policy links info"
+    },
+    "policyLinksTerms": "villkor",
+    "@policyLinksTerms": {
+      "description": "Text shown as the terms policy link"
+    },
+    "policyLinksDataHandling": "datahanteringspolicy",
+    "@policyLinksDataHandling": {
+      "description": "Text shown as the data handling policy link"
+    },
+    "loginAction": "Logga in",
+    "@loginAction": {
+        "description": "Text shown in the login action"
+    },
+    "loginPageTitle": "Logga in",
+    "@loginPageTitle": {
+      "description": "Text shown in the appbar of the login page"
+    },
+    "loginFormCallToAction": "Logga in",
+    "@loginFormCallToAction": {
+      "description": "Text shown as the call to action for the login form"
+    },
+    "invalidCredentials": "Felaktig e-post eller lösenord.",
+    "@invalidCredentials": {
+      "description": "Text shown when the credentials are invalid"
+    },
+    "emailUnverified": "E-postadressen är inte verifierad.",
+    "@emailUnverified": {
+      "description": "Text shown when the email is unverified"
+    },
+    "passwordEmpty": "Lösenordet får inte vara tomt.",
+    "@passwordEmpty": {
+      "description": "Text shown when the password field is empty"
+    },
+    "enableAnalyticsTitle": "Hjälp oss förbättra appen",
+    "enableAnalyticsSubtitle": "Tillåt oss att samla och analysera data så vi kan förbättra appen.",
+    "enableAnalyticsAction": "Aktivera datainsamling",
+    "skipAnalyticsAction": "Hoppa över",
+    "logOutAction": "Logga ut"
+}

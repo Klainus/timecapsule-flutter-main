@@ -1,0 +1,15 @@
+name: api_exceptions
+description: A standardized set of exceptions intended to wrap exceptions thrown by network requests.
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.6.0
+
+resolution: workspace
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.4
+  very_good_analysis: ^7.0.0

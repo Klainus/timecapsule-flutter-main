@@ -1,0 +1,27 @@
+name: external_link_repository
+description: A Very Good Project created by Very Good CLI.
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.6.0
+
+resolution: workspace
+
+dependencies:
+  equatable: ^2.0.5
+  flutter:
+    sdk: flutter
+  path_provider: ^2.1.4
+  permission_handler: ^12.0.0+1
+  permission_handler_platform_interface: ^4.2.3
+  plugin_platform_interface: ^2.1.8
+  url_launcher: ^6.3.0
+  url_launcher_platform_interface: ^2.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.4
+  test: ^1.25.7
+  very_good_analysis: ^7.0.0

@@ -1,0 +1,32 @@
+name: user_repository
+description: A Very Good Project created by Very Good CLI.
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.6.0
+
+resolution: workspace
+
+dependencies:
+  app_api:
+    path: ../app_api
+  authentication_api:
+    path: ../authentication_api
+  bloc: ^9.0.0
+  equatable: ^2.0.5
+  flutter:
+    sdk: flutter
+  freezed: ^3.0.6
+  freezed_annotation: ^3.0.0
+  hydrated_bloc: ^10.0.0
+  json_annotation: ^4.9.0
+
+dev_dependencies:
+  bloc_test: ^10.0.0
+  build_runner: ^2.4.13
+  flutter_test:
+    sdk: flutter
+  json_serializable: ^6.9.5
+  mocktail: ^1.0.4
+  very_good_analysis: ^7.0.0

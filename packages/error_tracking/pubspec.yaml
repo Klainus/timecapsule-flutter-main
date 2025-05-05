@@ -1,0 +1,23 @@
+name: error_tracking
+description: A package for error tracking integrations.
+version: 0.0.1+1
+publish_to: none
+
+environment:
+  sdk: ^3.6.0
+
+resolution: workspace
+
+dependencies:
+  app_logging:
+    path: ../app_logging
+  flutter:
+    sdk: flutter
+  sentry_flutter: ^8.14.1
+  sentry_logging: ^8.14.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.4
+  very_good_analysis: ^7.0.0

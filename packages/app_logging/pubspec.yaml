@@ -1,0 +1,19 @@
+name: app_logging
+description: A package for configurable logging. Includes Sentry integration (must be added manually).
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.6.0
+
+resolution: workspace
+
+dependencies:
+  logging: ^1.2.0
+  sentry_logging: ^8.14.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.4
+  very_good_analysis: ^7.0.0
