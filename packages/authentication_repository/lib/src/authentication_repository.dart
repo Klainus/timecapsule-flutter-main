@@ -57,19 +57,7 @@ class AuthenticationRepository {
     }
   }
 
-  Future<void> logOut() async {
+  Future<void> logout() async {
     await _api.unauthenticate();
-  }
-
-  Future<void> resetPassword({
-    required String email,
-  }) async {
-    await _api.resetPassword(
-      email: email,
-    );
-  }
-
-  Future<void> deleteAccount(String password) async {
-    await _api.deleteUser(password);
   }
 }

@@ -57,6 +57,6 @@ class AuthenticationBloc
     AuthenticationLogoutPressed event,
     Emitter<AuthenticationState> emit,
   ) {
-    _authenticationRepository.logOut();
+    _authenticationRepository.logout();
   }
 }

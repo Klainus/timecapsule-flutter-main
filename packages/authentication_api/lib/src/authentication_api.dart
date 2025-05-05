@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:app_api/app_api.dart';
 import 'package:app_client/app_client.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginInvalidCredentialsExeption implements Exception {}
 
@@ -10,144 +10,68 @@ class RegisterValidationException implements Exception {}
 class EmailUnverifiedException implements Exception {}
 
 class AuthenticationApi {
-  AuthenticationApi({
-    required AppClient appClient,
-    required UsersApi usersApi,
-  })  : _client = appClient,
-        _usersApi = usersApi;
+  AuthenticationApi({FirebaseAuth? firebaseAuth})
+      : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance;
+  final FirebaseAuth _firebaseAuth;
 
-  final AppClient _client;
-  final UsersApi _usersApi;
+  Stream<AuthenticationStatus> get status {
+    return _firebaseAuth.authStateChanges().map((user) {
+      if (user == null) {
+        return AuthenticationStatus.unauthenticated;
+      } else {
+        return AuthenticationStatus.authenticated;
+      }
+    });
+  }
 
-  Stream<AuthenticationStatus> get status => _client.authenticationStatus;
-  AuthenticationStatus get currentStatus => _client.currentStatus;
-
-  void authenticate() {
-    _client.authenticate();
+  AuthenticationStatus get currentStatus {
+    final user = _firebaseAuth.currentUser;
+    return user == null
+        ? AuthenticationStatus.unauthenticated
+        : AuthenticationStatus.authenticated;
   }
 
   Future<void> login({
     required String email,
     required String password,
   }) async {
-    Response<dynamic> response;
-
     try {
-      response = await _usersApi.usersLoginCreate(
-        login: Login(
-          email: email,
-          password: password,
-        ),
+      await _firebaseAuth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
       );
-    } on DioException catch (error, stackTrace) {
-      switch (error.response) {
-        case Response(
-            statusCode: 401,
-            data: {
-              'detail': 'No active account found with the given credentials',
-            },
-          ):
-          throw LoginInvalidCredentialsExeption();
-        case Response(
-            statusCode: 403,
-            data: {
-              'detail': 'Email is not verified',
-            },
-          ):
-          throw EmailUnverifiedException();
-        default:
-          Error.throwWithStackTrace(
-            HttpException(error),
-            stackTrace,
-          );
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found' || e.code == 'wrong-password') {
+        throw LoginInvalidCredentialsExeption();
+      } else if (e.code == 'user-disabled') {
+        throw EmailUnverifiedException();
+      } else {
+        rethrow;
       }
-    } catch (error, stackTrace) {
-      Error.throwWithStackTrace(
-        HttpException(error),
-        stackTrace,
-      );
     }
-
-    final statusCode = response.statusCode;
-    if (statusCode != 200) throw HttpRequestFailure(statusCode, response.data);
-
-    _client.authenticate();
   }
 
   Future<void> register({
     required String email,
     required String password,
   }) async {
-    Response<Registration> response;
-
     try {
-      response = await _usersApi.usersRegisterCreate(
-        registration: Registration(
-          email: email,
-          password: password,
-        ),
+      await _firebaseAuth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
       );
-    } on DioException catch (error, stackTrace) {
-      switch (error.response) {
-        case Response(statusCode: 400):
-          throw RegisterValidationException();
-        default:
-          Error.throwWithStackTrace(
-            HttpException(error),
-            stackTrace,
-          );
-      }
-    } catch (error, stackTrace) {
-      Error.throwWithStackTrace(
-        HttpException(error),
-        stackTrace,
-      );
+    } on FirebaseAuthException catch (e) {
+      throw RegisterValidationException();
     }
-
-    final statusCode = response.statusCode;
-    if (statusCode != 201) throw HttpRequestFailure(statusCode, response.data);
-  }
-
-  Future<void> resetPassword({
-    required String email,
-  }) async {
-    Response<ResetPassword> response;
-
-    try {
-      response = await _usersApi.usersResetPasswordCreate(
-        resetPassword: ResetPassword(email: email),
-      );
-    } catch (error, stackTrace) {
-      Error.throwWithStackTrace(
-        HttpException(error),
-        stackTrace,
-      );
-    }
-
-    final statusCode = response.statusCode;
-    if (statusCode != 204) throw HttpRequestFailure(statusCode, response.data);
-  }
-
-  Future<void> deleteUser(String password) async {
-    Response<dynamic> response;
-
-    try {
-      response = await _usersApi.usersMeDestroy();
-    } catch (error, stackTrace) {
-      Error.throwWithStackTrace(
-        HttpException(error),
-        stackTrace,
-      );
-    }
-
-    final statusCode = response.statusCode;
-    if (statusCode != 204) throw HttpRequestFailure(statusCode, response.data);
-
-    _client.unauthenticate();
   }
 
   Future<void> unauthenticate() async {
-    await _usersApi.usersLogoutCreate();
-    _client.unauthenticate();
+    try {
+      await _firebaseAuth.signOut();
+    } catch (e) {
+      // Handle any errors that might occur during logout
+      print('Logout failed: $e');
+      rethrow;
+    }
   }
 }

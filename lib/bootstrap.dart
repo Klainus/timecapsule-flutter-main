@@ -8,6 +8,7 @@ import 'package:as_boilerplate_flutter/app/view/app.dart';
 import 'package:authentication_repository/authentication_repository.dart';
 import 'package:error_tracking/error_tracking.dart';
 import 'package:external_link_repository/external_link_repository.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
@@ -72,11 +73,12 @@ Future<void> bootstrap({
         debugPrint: debugPrint,
       );
 
+      final firebaseAuth = FirebaseAuth.instance;
+
       final usersApi = UsersApi(client.http);
 
       final authenticationApi = AuthenticationApi(
-        appClient: client,
-        usersApi: usersApi,
+        firebaseAuth: firebaseAuth,
       );
 
       final authenticationRepository = AuthenticationRepository(
