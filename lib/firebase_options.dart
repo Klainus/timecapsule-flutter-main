@@ -47,29 +47,30 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBgpXsuar-Vwj0DBecIGxHGJ_J6e3uEae4',
-    appId: '1:757683866052:web:356ea684df2a618317fc91',
-    messagingSenderId: '757683866052',
-    projectId: 'boilerplate-76495',
-    authDomain: 'boilerplate-76495.firebaseapp.com',
-    storageBucket: 'boilerplate-76495.firebasestorage.app',
-    measurementId: 'G-Y77HDT8WJ4',
+    apiKey: 'AIzaSyD5qTlYVLj8g8lts0yC6CzMSokN_R-HWXM',
+    appId: '1:1032637161994:web:67c98dee08cd49a7a8f5f3',
+    messagingSenderId: '1032637161994',
+    projectId: 'timecapsule-cfaf7',
+    authDomain: 'timecapsule-cfaf7.firebaseapp.com',
+    storageBucket: 'timecapsule-cfaf7.firebasestorage.app',
+    measurementId: 'G-8XWB6JPQG2',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyC40rOJW0IcCW1tWUV9ojTLUu5BXgpJiIE',
-    appId: '1:757683866052:android:8e9004455d207d5917fc91',
-    messagingSenderId: '757683866052',
-    projectId: 'boilerplate-76495',
-    storageBucket: 'boilerplate-76495.firebasestorage.app',
+    apiKey: 'AIzaSyA6EKwKTyajEhu49jjZZXlaG5nhPPzhg6A',
+    appId: '1:1032637161994:android:14c0ec79bc300ac6a8f5f3',
+    messagingSenderId: '1032637161994',
+    projectId: 'timecapsule-cfaf7',
+    storageBucket: 'timecapsule-cfaf7.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAU3hW3JrwGg6bNVhwB3M49dQTGo5XmcJ4',
-    appId: '1:757683866052:ios:a08c4b2b218fb9a017fc91',
-    messagingSenderId: '757683866052',
-    projectId: 'boilerplate-76495',
-    storageBucket: 'boilerplate-76495.firebasestorage.app',
+    apiKey: 'AIzaSyBdyDP2HfvZhaazZzEuJx28bd6SSqlE_rY',
+    appId: '1:1032637161994:ios:812fe10cd6a100fda8f5f3',
+    messagingSenderId: '1032637161994',
+    projectId: 'timecapsule-cfaf7',
+    storageBucket: 'timecapsule-cfaf7.firebasestorage.app',
     iosBundleId: 'se.appshack.asboilerplateflutter',
   );
+
 }

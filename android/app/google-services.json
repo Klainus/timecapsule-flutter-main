@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "757683866052",
-    "project_id": "boilerplate-76495",
-    "storage_bucket": "boilerplate-76495.firebasestorage.app"
+    "project_number": "1032637161994",
+    "project_id": "timecapsule-cfaf7",
+    "storage_bucket": "timecapsule-cfaf7.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:757683866052:android:8e9004455d207d5917fc91",
+        "mobilesdk_app_id": "1:1032637161994:android:14c0ec79bc300ac6a8f5f3",
         "android_client_info": {
           "package_name": "se.appshack.asboilerplateflutter"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyC40rOJW0IcCW1tWUV9ojTLUu5BXgpJiIE"
+          "current_key": "AIzaSyA6EKwKTyajEhu49jjZZXlaG5nhPPzhg6A"
         }
       ],
       "services": {
