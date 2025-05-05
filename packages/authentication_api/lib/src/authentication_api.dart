@@ -31,6 +31,8 @@ class AuthenticationApi {
         : AuthenticationStatus.authenticated;
   }
 
+  User? get currentUser => _firebaseAuth.currentUser;
+
   Future<void> login({
     required String email,
     required String password,
