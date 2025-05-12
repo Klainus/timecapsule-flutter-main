@@ -24,10 +24,24 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: BaseAppBar(),
-      body: _Body(),
+      appBar: const BaseAppBar(),
+      body: BlocListener<LoginBloc, LoginState>(
+        listener: (context, state) {
+          if (state.form.status == LoginFormStatus.success) {
+            Navigator.of(context).push(
+              TabRootPage.route(),
+            );
+          } else if (state.form.status == LoginFormStatus.failure) {
+            const errorMessage = 'An error occurred. Please try again.';
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text(errorMessage)),
+            );
+          }
+        },
+        child: const _Body(),
+      ),
     );
   }
 }
@@ -95,12 +109,6 @@ class _SubmitButton extends StatelessWidget {
         context.read<LoginBloc>().add(
               const LoginSubmitted(),
             );
-
-        // TODO(User): Remove this navigation when connected to backend
-        Navigator.of(context).pushAndRemoveUntil(
-          TabRootPage.route(),
-          (route) => false,
-        );
       },
     );
   }

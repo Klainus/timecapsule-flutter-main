@@ -57,12 +57,14 @@ class AuthenticationBloc
     AuthenticationLogoutPressed event,
     Emitter<AuthenticationState> emit,
   ) async {
-    await _authenticationRepository.logout();
-    emit(
-      const AuthenticationState(
-        status: AuthenticationStatus.unauthenticated,
-        user: User.empty,
-      ),
-    );
+    try {
+      await _authenticationRepository.logout();
+      emit(
+        const AuthenticationState(
+          status: AuthenticationStatus.unauthenticated,
+          user: User.empty,
+        ),
+      );
+    } catch (e) {}
   }
 }
