@@ -17,6 +17,8 @@ abstract class AppTheme {
       onPrimary: _colors.onPrimary,
       secondary: _colors.secondary,
       onSecondary: _colors.onSecondary,
+      tertiary: _colors.tertiary,
+      onTertiary: _colors.onTertiary,
       error: _colors.error,
       onError: _colors.onError,
       surface: _colors.surface,
