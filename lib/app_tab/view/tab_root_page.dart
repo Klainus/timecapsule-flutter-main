@@ -1,3 +1,4 @@
+import 'package:as_boilerplate_flutter/add_capsule/view/add_capsule_page.dart';
 import 'package:as_boilerplate_flutter/app_tab/app_tab.dart';
 import 'package:as_boilerplate_flutter/app_tab/widgets/app_navigation_bar.dart';
 import 'package:as_boilerplate_flutter/counter/view/counter_page.dart';
@@ -41,7 +42,7 @@ class _Body extends StatelessWidget {
         for (final tab in AppTab.values)
           switch (tab) {
             AppTab.timecapsule =>
-              const SettingsPage(), // TODO: implement time capsule
+              const AddTimeCapsulePage(), // TODO: implement time capsule
             AppTab.home => const CounterPage(),
             AppTab.settings => const SettingsPage(),
           },
