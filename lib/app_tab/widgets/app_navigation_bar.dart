@@ -1,5 +1,6 @@
 import 'package:app_l10n/app_l10n.dart';
 import 'package:as_boilerplate_flutter/app_tab/bloc/app_tab_bloc.dart';
+import 'package:as_boilerplate_flutter/app_tab/widgets/time_capsule_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -25,6 +26,10 @@ class AppNavigationBar extends StatelessWidget {
         NavigationDestination(
           icon: const Icon(Icons.home_outlined),
           label: l10n.navigationHome,
+        ),
+        const NavigationDestination(
+          icon: TimeCapsuleIcon(),
+          label: 'Time Capsule',
         ),
         NavigationDestination(
           icon: const Icon(
