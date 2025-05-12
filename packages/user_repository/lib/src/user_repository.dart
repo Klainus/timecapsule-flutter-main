@@ -14,12 +14,16 @@ class UserRepository {
       switch (status) {
         case AuthenticationStatus.initial:
           await _userService.fetch();
-          authenticationApi.authenticate();
-          _storage.subscribe(currentUser.id);
+          final user = authenticationApi.currentUser;
+          if (user != null) {
+            _storage.subscribe(user.uid);
+          }
         case AuthenticationStatus.authenticated:
-          if (currentUser.isNotEmpty) return;
+          final user = authenticationApi.currentUser;
+          if (user == null) return;
           await _userService.fetch();
-          _storage.subscribe(currentUser.id);
+
+          _storage.subscribe(user.uid);
         case AuthenticationStatus.unauthenticated:
           _userService.clear();
           _storage.unsubscribe();

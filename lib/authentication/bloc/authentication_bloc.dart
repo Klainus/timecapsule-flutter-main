@@ -53,10 +53,16 @@ class AuthenticationBloc
     );
   }
 
-  void _onLogoutPressed(
+  Future<void> _onLogoutPressed(
     AuthenticationLogoutPressed event,
     Emitter<AuthenticationState> emit,
-  ) {
-    _authenticationRepository.logout();
+  ) async {
+    await _authenticationRepository.logout();
+    emit(
+      const AuthenticationState(
+        status: AuthenticationStatus.unauthenticated,
+        user: User.empty,
+      ),
+    );
   }
 }

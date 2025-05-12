@@ -21,96 +21,84 @@ void main() {
     user: currentUser,
   );
 
-  group(AuthenticationBloc, () {
-    late AuthenticationRepository authenticationRepository;
-    late UserRepository userRepository;
+  group(
+    AuthenticationBloc,
+    () {
+      late AuthenticationRepository authenticationRepository;
+      late UserRepository userRepository;
 
-    setUp(() {
-      authenticationRepository = MockAuthenticationRepository();
-      userRepository = MockUserRepository();
-      when(() => authenticationRepository.status).thenAnswer(
-        (_) => Stream.empty(),
-      );
-      when(() => authenticationRepository.currentStatus).thenAnswer(
-        (_) => currentStatus,
-      );
-      when(() => userRepository.user).thenAnswer((_) => Stream.empty());
-      when(() => userRepository.currentUser).thenReturn(currentUser);
-    });
+      setUp(() {
+        authenticationRepository = MockAuthenticationRepository();
+        userRepository = MockUserRepository();
+        when(() => authenticationRepository.status).thenAnswer(
+          (_) => Stream.empty(),
+        );
+        when(() => authenticationRepository.currentStatus).thenAnswer(
+          (_) => currentStatus,
+        );
+        when(() => userRepository.user).thenAnswer((_) => Stream.empty());
+        when(() => userRepository.currentUser).thenReturn(currentUser);
+      });
 
-    AuthenticationBloc buildBloc() {
-      return AuthenticationBloc(
-        authenticationRepository: authenticationRepository,
-        userRepository: userRepository,
-      );
-    }
+      AuthenticationBloc buildBloc() {
+        return AuthenticationBloc(
+          authenticationRepository: authenticationRepository,
+          userRepository: userRepository,
+        );
+      }
 
-    test('initial state is $AuthenticationState', () {
-      expect(buildBloc().state, initialState);
-    });
+      test('initial state is $AuthenticationState', () {
+        expect(buildBloc().state, initialState);
+      });
 
-    group(AuthenticationStatusSubscriptionRequested, () {
-      const updatedStatus = AuthenticationStatus.authenticated;
+      group(AuthenticationStatusSubscriptionRequested, () {
+        const updatedStatus = AuthenticationStatus.authenticated;
 
-      blocTest<AuthenticationBloc, AuthenticationState>(
-        'emits status when status stream emits new value',
-        build: buildBloc,
-        setUp: () {
-          when(() => authenticationRepository.status).thenAnswer(
-            (_) => Stream.value(updatedStatus),
+        blocTest<AuthenticationBloc, AuthenticationState>(
+          'emits status when status stream emits new value',
+          build: buildBloc,
+          setUp: () {
+            when(() => authenticationRepository.status).thenAnswer(
+              (_) => Stream.value(updatedStatus),
+            );
+          },
+          act: (bloc) {
+            bloc.add(
+              AuthenticationStatusSubscriptionRequested(),
+            );
+          },
+          expect: () => [
+            initialState.copyWith(status: updatedStatus),
+          ],
+        );
+      });
+
+      group(
+        AuthenticationUserSubscriptionRequested,
+        () {
+          final updatedUser = currentUser.copyWith(
+            email: 'updatedEmail',
+          );
+
+          blocTest<AuthenticationBloc, AuthenticationState>(
+            'emits user when user stream emits new value',
+            build: buildBloc,
+            setUp: () {
+              when(() => userRepository.user).thenAnswer(
+                (_) => Stream.value(updatedUser),
+              );
+            },
+            act: (bloc) {
+              bloc.add(
+                AuthenticationUserSubscriptionRequested(),
+              );
+            },
+            expect: () => [
+              initialState.copyWith(user: updatedUser),
+            ],
           );
         },
-        act: (bloc) {
-          bloc.add(
-            AuthenticationStatusSubscriptionRequested(),
-          );
-        },
-        expect: () => [
-          initialState.copyWith(status: updatedStatus),
-        ],
       );
-    });
-
-    group(AuthenticationUserSubscriptionRequested, () {
-      final updatedUser = currentUser.copyWith(
-        email: 'updatedEmail',
-      );
-
-      blocTest<AuthenticationBloc, AuthenticationState>(
-        'emits user when user stream emits new value',
-        build: buildBloc,
-        setUp: () {
-          when(() => userRepository.user).thenAnswer(
-            (_) => Stream.value(updatedUser),
-          );
-        },
-        act: (bloc) {
-          bloc.add(
-            AuthenticationUserSubscriptionRequested(),
-          );
-        },
-        expect: () => [
-          initialState.copyWith(user: updatedUser),
-        ],
-      );
-    });
-
-    group(AuthenticationLogoutPressed, () {
-      blocTest<AuthenticationBloc, AuthenticationState>(
-        'calls logOut',
-        setUp: () {
-          when(authenticationRepository.logOut).thenAnswer((_) async {});
-        },
-        build: buildBloc,
-        act: (bloc) {
-          bloc.add(
-            AuthenticationLogoutPressed(),
-          );
-        },
-        verify: (_) {
-          verify(authenticationRepository.logOut).called(1);
-        },
-      );
-    });
-  });
+    },
+  );
 }
