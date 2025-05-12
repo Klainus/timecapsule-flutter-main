@@ -4,34 +4,40 @@ import 'package:flutter/material.dart';
 class LightAppColors extends AppColors {
   const LightAppColors();
 
-  static const _dark = Color(0xFF2B2B2B);
+  static const _dark = Color(0xFF212121);
 
   @override
   Brightness get brightness => Brightness.light;
 
   @override
-  Color get surface => const Color(0xFFF8F8F9);
+  Color get surface => Colors.white;
 
   @override
   Color get onSurface => _dark;
 
   @override
-  Color get surfaceBright => Colors.white;
+  Color get surfaceBright => const Color(0xFFF5F5F5);
 
   @override
-  Color get primary => const Color(0xFF43474A);
+  Color get primary => const Color(0xFF7B61FF); // Purple
 
   @override
   Color get onPrimary => Colors.white;
 
   @override
-  Color get secondary => Colors.white;
+  Color get secondary => const Color(0xFFFF9E5E); // Orange
 
   @override
   Color get onSecondary => _dark;
 
   @override
-  Color get error => const Color(0xFFB00020);
+  Color get tertiary => const Color(0xFF3EFCA8); // Green (Accent)
+
+  @override
+  Color get onTertiary => Colors.black;
+
+  @override
+  Color get error => const Color(0xFFFF6060);
 
   @override
   Color get onError => Colors.white;
@@ -40,10 +46,10 @@ class LightAppColors extends AppColors {
   Color get outline => _dark;
 
   @override
-  Color get outlineVariant => const Color(0xFFD5D5DE);
+  Color get outlineVariant => const Color(0xFFD9D9D9); // Light Gray
 
   @override
-  Color get secondaryContainer => const Color(0xFF7F7F88);
+  Color get secondaryContainer => const Color(0xFF3EFCA8); // Green
 
   @override
   Color get onSecondaryContainer => Colors.white;
