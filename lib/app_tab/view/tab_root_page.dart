@@ -40,6 +40,8 @@ class _Body extends StatelessWidget {
       children: [
         for (final tab in AppTab.values)
           switch (tab) {
+            AppTab.timecapsule =>
+              const SettingsPage(), // TODO: implement time capsule
             AppTab.home => const CounterPage(),
             AppTab.settings => const SettingsPage(),
           },
