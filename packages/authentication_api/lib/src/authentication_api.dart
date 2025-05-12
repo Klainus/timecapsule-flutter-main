@@ -45,7 +45,7 @@ class AuthenticationApi {
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found' || e.code == 'wrong-password') {
         throw LoginInvalidCredentialsExeption();
-      } else if (e.code == 'user-disabled') {
+      } else if (e.code == 'email-not-verified') {
         throw EmailUnverifiedException();
       } else {
         rethrow;
@@ -71,8 +71,6 @@ class AuthenticationApi {
     try {
       await _firebaseAuth.signOut();
     } catch (e) {
-      // Handle any errors that might occur during logout
-      print('Logout failed: $e');
       rethrow;
     }
   }

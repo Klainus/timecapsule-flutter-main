@@ -1,6 +1,7 @@
 import 'package:app_l10n/app_l10n.dart';
 import 'package:app_ui/app_ui.dart';
 import 'package:as_boilerplate_flutter/authentication/authentication.dart';
+import 'package:as_boilerplate_flutter/login/view/login_page.dart';
 import 'package:as_boilerplate_flutter/theme/widgets/theme_radio_group.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -95,6 +96,9 @@ class _LogoutButton extends StatelessWidget {
         context.read<AuthenticationBloc>().add(
               const AuthenticationLogoutPressed(),
             );
+        Navigator.of(context).push(
+          LoginPage.route(),
+        );
       },
     );
   }
