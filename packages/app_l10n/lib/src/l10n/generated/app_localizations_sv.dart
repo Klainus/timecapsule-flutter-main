@@ -9,7 +9,7 @@ class AppLocalizationsSv extends AppLocalizations {
   AppLocalizationsSv([String locale = 'sv']) : super(locale);
 
   @override
-  String get landingPageTitle => 'App Shack';
+  String get landingPageTitle => 'TimeCapsule';
 
   @override
   String get navigationHome => 'Hem';
@@ -45,7 +45,8 @@ class AppLocalizationsSv extends AppLocalizations {
   String get createAccountPageTitle => 'Skapa konto';
 
   @override
-  String get createAccountSubtitle => 'Fyll i dina uppgifter för att skapa ett konto.';
+  String get createAccountSubtitle =>
+      'Fyll i dina uppgifter för att skapa ett konto.';
 
   @override
   String get createAccountButton => 'Skapa konto';
@@ -69,7 +70,8 @@ class AppLocalizationsSv extends AppLocalizations {
   String get passwordCriteriaNumber => 'Minst 1 siffra';
 
   @override
-  String get policyLinksInfoPart1 => 'Genom att registrera dig godkänner du våra ';
+  String get policyLinksInfoPart1 =>
+      'Genom att registrera dig godkänner du våra ';
 
   @override
   String get policyLinksInfoPart2 => ' och ';
@@ -102,7 +104,8 @@ class AppLocalizationsSv extends AppLocalizations {
   String get enableAnalyticsTitle => 'Hjälp oss förbättra appen';
 
   @override
-  String get enableAnalyticsSubtitle => 'Tillåt oss att samla och analysera data så vi kan förbättra appen.';
+  String get enableAnalyticsSubtitle =>
+      'Tillåt oss att samla och analysera data så vi kan förbättra appen.';
 
   @override
   String get enableAnalyticsAction => 'Aktivera datainsamling';

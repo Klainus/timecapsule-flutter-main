@@ -2,10 +2,11 @@ import 'package:analytics_repository/analytics_repository.dart';
 import 'package:app_l10n/app_l10n.dart';
 import 'package:app_ui/app_ui.dart';
 import 'package:as_boilerplate_flutter/create_account/create_account.dart';
+import 'package:as_boilerplate_flutter/landing/widgets/widgets.dart';
 import 'package:as_boilerplate_flutter/login/view/login_page.dart';
 import 'package:flutter/material.dart';
 
-class LandingPage extends StatelessWidget {
+class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
 
   static Route<void> route() {
@@ -16,27 +17,64 @@ class LandingPage extends StatelessWidget {
   }
 
   @override
+  State<LandingPage> createState() => _LandingPageState();
+}
+
+class _LandingPageState extends State<LandingPage>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller = AnimationController(
+      duration: const Duration(seconds: 8),
+      vsync: this,
+    )..repeat(reverse: true);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final spacing = context.spacing;
 
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: spacing.horizontalValueTimes(1.5),
+      body: Stack(
+        children: [
+          AnimatedBuilder(
+            animation: _controller,
+            builder: (context, child) {
+              return CustomPaint(
+                painter: AnimatedBlobPainter(progress: _controller.value),
+                child: Container(),
+              );
+            },
           ),
-          child: Column(
-            children: [
-              spacing.tripleVertical,
-              const _HeaderText(),
-              const Spacer(),
-              const _LoginButton(),
-              spacing.verticalTimes(0.75),
-              const _CreateAccountButton(),
-              spacing.verticalTimes(1.5),
-            ],
+          SafeArea(
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: spacing.horizontalValueTimes(1.5),
+              ),
+              child: Column(
+                children: [
+                  spacing.tripleVertical,
+                  const _HeaderText(),
+                  const Spacer(),
+                  const _LoginButton(),
+                  spacing.verticalTimes(0.75),
+                  const _CreateAccountButton(),
+                  spacing.verticalTimes(1.5),
+                ],
+              ),
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

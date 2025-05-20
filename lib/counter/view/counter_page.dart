@@ -1,5 +1,6 @@
 import 'package:app_l10n/app_l10n.dart';
 import 'package:as_boilerplate_flutter/counter/bloc/counter_bloc.dart';
+import 'package:as_boilerplate_flutter/widgets/sp_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -27,7 +28,12 @@ class CounterView extends StatelessWidget {
         title: Text(l10n.counterAppBarTitle),
       ),
       body: const Center(
-        child: _Text(),
+        child: Column(
+          children: [
+            _Text(),
+            CustomTextField(label: 'Test'),
+          ],
+        ),
       ),
       floatingActionButton: const _Fabs(),
     );
