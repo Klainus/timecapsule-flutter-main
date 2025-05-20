@@ -47,8 +47,8 @@ dependencies:
   external_link_repository:
     path: packages/external_link_repository
   firebase_auth: ^5.5.3
-  firebase_core: ^3.13.0
-  firebase_storage: ^12.0.0
+  firebase_core: ^3.13.1
+  firebase_storage: ^12.4.6
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.0
@@ -56,7 +56,7 @@ dependencies:
     sdk: flutter
   freezed_annotation: ^3.0.0
   hydrated_bloc: ^10.0.0
-  intl: ^0.19.0
+  intl: ^0.20.2
   json_annotation: ^4.9.0
   logging: ^1.2.0
   nested: ^1.0.0
@@ -75,7 +75,7 @@ dev_dependencies:
     sdk: flutter
   freezed: ^3.0.6
   json_serializable: ^6.9.5
-  melos: ^6.1.0
+  melos: ^7.0.0-dev.8
   mockingjay: ^1.0.0
   mocktail: ^1.0.4
   very_good_analysis: ^7.0.0
