@@ -9,7 +9,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get landingPageTitle => 'App Shack';
+  String get landingPageTitle => 'TimeCapsule';
 
   @override
   String get navigationHome => 'Home';
@@ -69,7 +69,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get passwordCriteriaNumber => 'At least 1 number';
 
   @override
-  String get policyLinksInfoPart1 => 'By creating an account, you agree to our ';
+  String get policyLinksInfoPart1 =>
+      'By creating an account, you agree to our ';
 
   @override
   String get policyLinksInfoPart2 => ' and ';
@@ -102,7 +103,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get enableAnalyticsTitle => 'Enable analytics';
 
   @override
-  String get enableAnalyticsSubtitle => 'Allow us to collect and analyze data so we can improve the app.';
+  String get enableAnalyticsSubtitle =>
+      'Allow us to collect and analyze data so we can improve the app.';
 
   @override
   String get enableAnalyticsAction => 'Enable analytics';
