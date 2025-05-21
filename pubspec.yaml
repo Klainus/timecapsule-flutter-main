@@ -47,8 +47,8 @@ dependencies:
   external_link_repository:
     path: packages/external_link_repository
   firebase_auth: ^5.5.3
-  firebase_core: ^3.13.0
-  firebase_storage: ^12.0.0
+  firebase_core: ^3.13.1
+  firebase_storage: ^12.4.6
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.0
