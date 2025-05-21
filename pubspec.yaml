@@ -46,7 +46,7 @@ dependencies:
     path: packages/error_tracking
   external_link_repository:
     path: packages/external_link_repository
-  firebase_auth: ^5.5.3
+  firebase_auth: ^5.5.4
   firebase_core: ^3.13.1
   firebase_storage: ^12.4.6
 
