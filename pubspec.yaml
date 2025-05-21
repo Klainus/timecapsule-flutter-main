@@ -58,7 +58,7 @@ dependencies:
     sdk: flutter
   freezed_annotation: ^3.0.0
   hydrated_bloc: ^10.0.0
-  intl: ^0.20.2
+  intl: ^0.19.0
   json_annotation: ^4.9.0
   logging: ^1.2.0
   nested: ^1.0.0
@@ -67,6 +67,8 @@ dependencies:
   stream_transform: ^2.1.0
   user_repository:
     path: packages/user_repository
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
 
 dev_dependencies:
   bloc_test: ^10.0.0
