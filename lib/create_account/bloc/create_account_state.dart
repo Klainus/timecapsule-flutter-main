@@ -7,5 +7,6 @@ part 'create_account_state.freezed.dart';
 abstract class CreateAccountState with _$CreateAccountState {
   const factory CreateAccountState({
     @Default(CreateAccountForm()) CreateAccountForm form,
+    @Default(false) bool showIntro,
   }) = _CreateAccountState;
 }

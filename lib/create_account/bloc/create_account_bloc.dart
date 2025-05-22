@@ -19,6 +19,7 @@ class CreateAccountBloc extends Bloc<CreateAccountEvent, CreateAccountState> {
     on<CreateAccountSubmitted>(_onSubmitted);
     on<CreateAccountTermsLinkPressed>(_onTermsLinkPressed);
     on<CreateAccountDataHandlingLinkPressed>(_onDataHandlingLinkPressed);
+    on<CreateAccountShowIntroChanged>(_changeIntroStatus);
   }
 
   final AuthenticationRepository _authenticationRepository;
@@ -32,6 +33,15 @@ class CreateAccountBloc extends Bloc<CreateAccountEvent, CreateAccountState> {
       state.copyWith.form.email(
         value: event.value,
       ),
+    );
+  }
+
+  void _changeIntroStatus(
+    CreateAccountShowIntroChanged event,
+    Emitter<CreateAccountState> emit,
+  ) {
+    emit(
+      state.copyWith(showIntro: false),
     );
   }
 
@@ -71,8 +81,11 @@ class CreateAccountBloc extends Bloc<CreateAccountEvent, CreateAccountState> {
       );
 
       emit(
-        state.copyWith.form(
-          status: CreateAccountStatus.success,
+        state.copyWith(
+          form: state.form.copyWith(
+            status: CreateAccountStatus.success,
+          ),
+          showIntro: true,
         ),
       );
     } catch (e, s) {
