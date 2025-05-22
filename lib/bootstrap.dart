@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:analytics_repository/analytics_repository.dart';
 import 'package:app_client_platform_configuration/app_client_platform_configuration.dart';
 import 'package:app_logging/app_logging.dart';
+import 'package:as_boilerplate_flutter/add_capsule/models/hive_adapter.dart';
 import 'package:as_boilerplate_flutter/app/app_bloc_observer.dart';
 import 'package:as_boilerplate_flutter/app/view/app.dart';
 import 'package:authentication_repository/authentication_repository.dart';
@@ -12,6 +13,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
+import 'package:hive/hive.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:user_repository/user_repository.dart';
@@ -35,6 +37,11 @@ Future<void> bootstrap({
         name: 'as-boilerplate-flutter',
         options: firebaseOptions,
       );
+
+      final appDocumentDir = await getApplicationDocumentsDirectory();
+      Hive
+        ..init(appDocumentDir.path)
+        ..registerAdapter(TimeCapsuleAdapter());
 
       final analyticsRepository = AnalyticsRepository(
         firebaseApp,
