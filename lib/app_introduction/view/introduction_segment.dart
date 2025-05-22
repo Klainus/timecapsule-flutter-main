@@ -1,5 +1,6 @@
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({
@@ -21,11 +22,17 @@ class IntroPage extends StatelessWidget {
     return Stack(
       fit: StackFit.expand,
       children: [
-        // Background Image
-        Image.asset(
-          background,
-          fit: BoxFit.cover,
-        ),
+        // Background Image or SVG
+        if (background.endsWith('.svg'))
+          SvgPicture.asset(
+            background,
+            fit: BoxFit.cover,
+          )
+        else
+          Image.asset(
+            background,
+            fit: BoxFit.cover,
+          ),
         // Overlay with content
         ColoredBox(
           color: Colors.black.withOpacity(0.5), // Dark overlay for contrast
