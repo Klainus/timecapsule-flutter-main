@@ -1,6 +1,7 @@
 import 'package:analytics_repository/analytics_repository.dart';
 import 'package:app_l10n/app_l10n.dart';
 import 'package:app_ui/app_ui.dart';
+import 'package:as_boilerplate_flutter/app_introduction/view/introduction.dart';
 import 'package:as_boilerplate_flutter/app_tab/view/tab_root_page.dart';
 import 'package:as_boilerplate_flutter/create_account/create_account.dart';
 import 'package:authentication_repository/authentication_repository.dart';
@@ -30,11 +31,17 @@ class CreateAccountPage extends StatelessWidget {
       listenWhen: (previous, current) =>
           !previous.form.status.isSuccess && current.form.status.isSuccess,
       listener: (context, state) {
-        // TODO(User): Remove this navigation when connected to backend
-        Navigator.of(context).pushAndRemoveUntil(
-          TabRootPage.route(),
-          (route) => false,
-        );
+        if (state.showIntro) {
+          Navigator.of(context).pushAndRemoveUntil(
+            IntroScreen.route(),
+            (route) => false,
+          );
+        } else if (state.form.status.isSuccess) {
+          Navigator.of(context).pushAndRemoveUntil(
+            TabRootPage.route(),
+            (route) => false,
+          );
+        }
       },
       child: const Scaffold(
         appBar: BaseAppBar(),
@@ -105,11 +112,6 @@ class _SubmitButton extends StatelessWidget {
         context.read<CreateAccountBloc>().add(
               const CreateAccountSubmitted(),
             );
-        // TODO(User): Remove this navigation when connected to backend
-        Navigator.of(context).pushAndRemoveUntil(
-          TabRootPage.route(),
-          (route) => false,
-        );
       },
     );
   }

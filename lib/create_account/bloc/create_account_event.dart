@@ -30,6 +30,15 @@ final class CreateAccountSubmitted extends CreateAccountEvent with Analytic {
   const CreateAccountSubmitted();
 }
 
+final class CreateAccountShowIntroChanged extends CreateAccountEvent {
+  const CreateAccountShowIntroChanged(this.showIntro);
+
+  final bool showIntro;
+
+  @override
+  List<Object> get props => [showIntro];
+}
+
 final class CreateAccountTermsLinkPressed extends CreateAccountEvent
     with Analytic {
   const CreateAccountTermsLinkPressed();

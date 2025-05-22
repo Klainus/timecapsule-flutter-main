@@ -16,6 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$CreateAccountState {
   CreateAccountForm get form;
+  bool get showIntro;
 
   /// Create a copy of CreateAccountState
   /// with the given fields replaced by the non-null parameter values.
@@ -30,15 +31,17 @@ mixin _$CreateAccountState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is CreateAccountState &&
-            (identical(other.form, form) || other.form == form));
+            (identical(other.form, form) || other.form == form) &&
+            (identical(other.showIntro, showIntro) ||
+                other.showIntro == showIntro));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, form);
+  int get hashCode => Object.hash(runtimeType, form, showIntro);
 
   @override
   String toString() {
-    return 'CreateAccountState(form: $form)';
+    return 'CreateAccountState(form: $form, showIntro: $showIntro)';
   }
 }
 
@@ -48,7 +51,7 @@ abstract mixin class $CreateAccountStateCopyWith<$Res> {
           CreateAccountState value, $Res Function(CreateAccountState) _then) =
       _$CreateAccountStateCopyWithImpl;
   @useResult
-  $Res call({CreateAccountForm form});
+  $Res call({CreateAccountForm form, bool showIntro});
 
   $CreateAccountFormCopyWith<$Res> get form;
 }
@@ -67,12 +70,17 @@ class _$CreateAccountStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? form = null,
+    Object? showIntro = null,
   }) {
     return _then(_self.copyWith(
       form: null == form
           ? _self.form
           : form // ignore: cast_nullable_to_non_nullable
               as CreateAccountForm,
+      showIntro: null == showIntro
+          ? _self.showIntro
+          : showIntro // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
@@ -90,11 +98,15 @@ class _$CreateAccountStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _CreateAccountState implements CreateAccountState {
-  const _CreateAccountState({this.form = const CreateAccountForm()});
+  const _CreateAccountState(
+      {this.form = const CreateAccountForm(), this.showIntro = false});
 
   @override
   @JsonKey()
   final CreateAccountForm form;
+  @override
+  @JsonKey()
+  final bool showIntro;
 
   /// Create a copy of CreateAccountState
   /// with the given fields replaced by the non-null parameter values.
@@ -109,15 +121,17 @@ class _CreateAccountState implements CreateAccountState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _CreateAccountState &&
-            (identical(other.form, form) || other.form == form));
+            (identical(other.form, form) || other.form == form) &&
+            (identical(other.showIntro, showIntro) ||
+                other.showIntro == showIntro));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, form);
+  int get hashCode => Object.hash(runtimeType, form, showIntro);
 
   @override
   String toString() {
-    return 'CreateAccountState(form: $form)';
+    return 'CreateAccountState(form: $form, showIntro: $showIntro)';
   }
 }
 
@@ -129,7 +143,7 @@ abstract mixin class _$CreateAccountStateCopyWith<$Res>
       __$CreateAccountStateCopyWithImpl;
   @override
   @useResult
-  $Res call({CreateAccountForm form});
+  $Res call({CreateAccountForm form, bool showIntro});
 
   @override
   $CreateAccountFormCopyWith<$Res> get form;
@@ -149,12 +163,17 @@ class __$CreateAccountStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   $Res call({
     Object? form = null,
+    Object? showIntro = null,
   }) {
     return _then(_CreateAccountState(
       form: null == form
           ? _self.form
           : form // ignore: cast_nullable_to_non_nullable
               as CreateAccountForm,
+      showIntro: null == showIntro
+          ? _self.showIntro
+          : showIntro // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
