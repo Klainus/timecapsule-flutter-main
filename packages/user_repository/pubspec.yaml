@@ -15,7 +15,7 @@ dependencies:
     path: ../authentication_api
   bloc: ^9.0.0
   equatable: ^2.0.5
-  firebase_auth: ^5.5.3
+  firebase_auth: ^5.5.4
   flutter:
     sdk: flutter
   freezed: ^2.4.4
