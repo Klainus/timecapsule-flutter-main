@@ -1,3 +1,4 @@
+import 'package:as_boilerplate_flutter/counter/widgets/capsule_countdown_timer.dart';
 import 'package:flutter/material.dart';
 
 class CapsuleCard extends StatelessWidget {
@@ -72,13 +73,7 @@ class CapsuleCard extends StatelessWidget {
               ),
               const Spacer(),
               // Reveal Date
-              Text(
-                'Reveal: ${revealDate.toLocal().toString().split(' ')[0]}',
-                style: const TextStyle(
-                  fontSize: 10, // Smaller font size
-                  color: Colors.blueAccent,
-                ),
-              ),
+              CountdownTimer(revealDate: revealDate),
             ],
           ),
         ),
