@@ -4,16 +4,35 @@ class TimeCapsuleIcon extends StatelessWidget {
   const TimeCapsuleIcon({
     super.key,
     this.size = 24.0,
-    this.color = Colors.black,
+    this.color,
   });
+
   final double size;
-  final Color color;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
+    // Resolve the color dynamically based on the theme
+    final iconTheme = IconTheme.of(context);
+    Color? iconColor = color ?? iconTheme.color ?? Colors.black;
+
+    // Apply opacity if defined in the theme
+    final iconOpacity = iconTheme.opacity ?? 1.0;
+    if (iconOpacity != 1.0) {
+      iconColor = iconColor.withOpacity(iconColor.opacity * iconOpacity);
+    }
+
+    // Adjust brightness for better visibility
+    final brightness = Theme.of(context).brightness;
+    if (brightness == Brightness.dark) {
+      iconColor = iconColor.withOpacity(0.8); // Slightly lighter in dark mode
+    } else {
+      iconColor = iconColor.withOpacity(0.9); // Slightly darker in light mode
+    }
+
     return CustomPaint(
       size: Size(size, size),
-      painter: _TimeCapsulePainter(color),
+      painter: _TimeCapsulePainter(iconColor),
     );
   }
 }

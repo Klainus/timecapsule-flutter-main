@@ -58,7 +58,7 @@ class IntroPage extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               if (showButton) ...[
-                const SizedBox(height: 150),
+                const SizedBox(height: 40),
                 AppFilledButton.shrink(
                   text: 'Get Started',
                   onPressed: () {
