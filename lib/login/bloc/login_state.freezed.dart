@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,42 +9,27 @@ part of 'login_state.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$LoginState {
-  LoginForm get form;
+  LoginForm get form => throw _privateConstructorUsedError;
 
   /// Create a copy of LoginState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $LoginStateCopyWith<LoginState> get copyWith =>
-      _$LoginStateCopyWithImpl<LoginState>(this as LoginState, _$identity);
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is LoginState &&
-            (identical(other.form, form) || other.form == form));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, form);
-
-  @override
-  String toString() {
-    return 'LoginState(form: $form)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $LoginStateCopyWith<$Res> {
+abstract class $LoginStateCopyWith<$Res> {
   factory $LoginStateCopyWith(
-          LoginState value, $Res Function(LoginState) _then) =
-      _$LoginStateCopyWithImpl;
+          LoginState value, $Res Function(LoginState) then) =
+      _$LoginStateCopyWithImpl<$Res, LoginState>;
   @useResult
   $Res call({LoginForm form});
 
@@ -53,11 +37,14 @@ abstract mixin class $LoginStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LoginStateCopyWithImpl<$Res> implements $LoginStateCopyWith<$Res> {
-  _$LoginStateCopyWithImpl(this._self, this._then);
+class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
+    implements $LoginStateCopyWith<$Res> {
+  _$LoginStateCopyWithImpl(this._value, this._then);
 
-  final LoginState _self;
-  final $Res Function(LoginState) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of LoginState
   /// with the given fields replaced by the non-null parameter values.
@@ -66,12 +53,12 @@ class _$LoginStateCopyWithImpl<$Res> implements $LoginStateCopyWith<$Res> {
   $Res call({
     Object? form = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       form: null == form
-          ? _self.form
+          ? _value.form
           : form // ignore: cast_nullable_to_non_nullable
               as LoginForm,
-    ));
+    ) as $Val);
   }
 
   /// Create a copy of LoginState
@@ -79,91 +66,94 @@ class _$LoginStateCopyWithImpl<$Res> implements $LoginStateCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $LoginFormCopyWith<$Res> get form {
-    return $LoginFormCopyWith<$Res>(_self.form, (value) {
-      return _then(_self.copyWith(form: value));
+    return $LoginFormCopyWith<$Res>(_value.form, (value) {
+      return _then(_value.copyWith(form: value) as $Val);
     });
   }
 }
 
 /// @nodoc
+abstract class _$$LoginStateImplCopyWith<$Res>
+    implements $LoginStateCopyWith<$Res> {
+  factory _$$LoginStateImplCopyWith(
+          _$LoginStateImpl value, $Res Function(_$LoginStateImpl) then) =
+      __$$LoginStateImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({LoginForm form});
 
-class _LoginState implements LoginState {
-  const _LoginState({this.form = const LoginForm()});
+  @override
+  $LoginFormCopyWith<$Res> get form;
+}
+
+/// @nodoc
+class __$$LoginStateImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$LoginStateImpl>
+    implements _$$LoginStateImplCopyWith<$Res> {
+  __$$LoginStateImplCopyWithImpl(
+      _$LoginStateImpl _value, $Res Function(_$LoginStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? form = null,
+  }) {
+    return _then(_$LoginStateImpl(
+      form: null == form
+          ? _value.form
+          : form // ignore: cast_nullable_to_non_nullable
+              as LoginForm,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoginStateImpl implements _LoginState {
+  const _$LoginStateImpl({this.form = const LoginForm()});
 
   @override
   @JsonKey()
   final LoginForm form;
 
-  /// Create a copy of LoginState
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$LoginStateCopyWith<_LoginState> get copyWith =>
-      __$LoginStateCopyWithImpl<_LoginState>(this, _$identity);
+  String toString() {
+    return 'LoginState(form: $form)';
+  }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LoginState &&
+            other is _$LoginStateImpl &&
             (identical(other.form, form) || other.form == form));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, form);
 
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'LoginState(form: $form)';
-  }
+  @pragma('vm:prefer-inline')
+  _$$LoginStateImplCopyWith<_$LoginStateImpl> get copyWith =>
+      __$$LoginStateImplCopyWithImpl<_$LoginStateImpl>(this, _$identity);
 }
 
-/// @nodoc
-abstract mixin class _$LoginStateCopyWith<$Res>
-    implements $LoginStateCopyWith<$Res> {
-  factory _$LoginStateCopyWith(
-          _LoginState value, $Res Function(_LoginState) _then) =
-      __$LoginStateCopyWithImpl;
-  @override
-  @useResult
-  $Res call({LoginForm form});
+abstract class _LoginState implements LoginState {
+  const factory _LoginState({final LoginForm form}) = _$LoginStateImpl;
 
   @override
-  $LoginFormCopyWith<$Res> get form;
-}
-
-/// @nodoc
-class __$LoginStateCopyWithImpl<$Res> implements _$LoginStateCopyWith<$Res> {
-  __$LoginStateCopyWithImpl(this._self, this._then);
-
-  final _LoginState _self;
-  final $Res Function(_LoginState) _then;
+  LoginForm get form;
 
   /// Create a copy of LoginState
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? form = null,
-  }) {
-    return _then(_LoginState(
-      form: null == form
-          ? _self.form
-          : form // ignore: cast_nullable_to_non_nullable
-              as LoginForm,
-    ));
-  }
-
-  /// Create a copy of LoginState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $LoginFormCopyWith<$Res> get form {
-    return $LoginFormCopyWith<$Res>(_self.form, (value) {
-      return _then(_self.copyWith(form: value));
-    });
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LoginStateImplCopyWith<_$LoginStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-// dart format on

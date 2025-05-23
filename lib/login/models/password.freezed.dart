@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,47 +9,28 @@ part of 'password.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Password {
-  PasswordValidator get validator;
-  PasswordErrorTranslator get translator;
-  String get value;
+  PasswordValidator get validator => throw _privateConstructorUsedError;
+  PasswordErrorTranslator get translator => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
 
   /// Create a copy of Password
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $PasswordCopyWith<Password> get copyWith =>
-      _$PasswordCopyWithImpl<Password>(this as Password, _$identity);
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is Password &&
-            (identical(other.validator, validator) ||
-                other.validator == validator) &&
-            (identical(other.translator, translator) ||
-                other.translator == translator) &&
-            (identical(other.value, value) || other.value == value));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, validator, translator, value);
-
-  @override
-  String toString() {
-    return 'Password(validator: $validator, translator: $translator, value: $value)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $PasswordCopyWith<$Res> {
-  factory $PasswordCopyWith(Password value, $Res Function(Password) _then) =
-      _$PasswordCopyWithImpl;
+abstract class $PasswordCopyWith<$Res> {
+  factory $PasswordCopyWith(Password value, $Res Function(Password) then) =
+      _$PasswordCopyWithImpl<$Res, Password>;
   @useResult
   $Res call(
       {PasswordValidator validator,
@@ -59,11 +39,14 @@ abstract mixin class $PasswordCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PasswordCopyWithImpl<$Res> implements $PasswordCopyWith<$Res> {
-  _$PasswordCopyWithImpl(this._self, this._then);
+class _$PasswordCopyWithImpl<$Res, $Val extends Password>
+    implements $PasswordCopyWith<$Res> {
+  _$PasswordCopyWithImpl(this._value, this._then);
 
-  final Password _self;
-  final $Res Function(Password) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of Password
   /// with the given fields replaced by the non-null parameter values.
@@ -74,17 +57,65 @@ class _$PasswordCopyWithImpl<$Res> implements $PasswordCopyWith<$Res> {
     Object? translator = null,
     Object? value = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       validator: null == validator
-          ? _self.validator
+          ? _value.validator
           : validator // ignore: cast_nullable_to_non_nullable
               as PasswordValidator,
       translator: null == translator
-          ? _self.translator
+          ? _value.translator
           : translator // ignore: cast_nullable_to_non_nullable
               as PasswordErrorTranslator,
       value: null == value
-          ? _self.value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$PasswordImplCopyWith<$Res>
+    implements $PasswordCopyWith<$Res> {
+  factory _$$PasswordImplCopyWith(
+          _$PasswordImpl value, $Res Function(_$PasswordImpl) then) =
+      __$$PasswordImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {PasswordValidator validator,
+      PasswordErrorTranslator translator,
+      String value});
+}
+
+/// @nodoc
+class __$$PasswordImplCopyWithImpl<$Res>
+    extends _$PasswordCopyWithImpl<$Res, _$PasswordImpl>
+    implements _$$PasswordImplCopyWith<$Res> {
+  __$$PasswordImplCopyWithImpl(
+      _$PasswordImpl _value, $Res Function(_$PasswordImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of Password
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? validator = null,
+    Object? translator = null,
+    Object? value = null,
+  }) {
+    return _then(_$PasswordImpl(
+      validator: null == validator
+          ? _value.validator
+          : validator // ignore: cast_nullable_to_non_nullable
+              as PasswordValidator,
+      translator: null == translator
+          ? _value.translator
+          : translator // ignore: cast_nullable_to_non_nullable
+              as PasswordErrorTranslator,
+      value: null == value
+          ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -93,8 +124,8 @@ class _$PasswordCopyWithImpl<$Res> implements $PasswordCopyWith<$Res> {
 
 /// @nodoc
 
-class _Password extends Password {
-  const _Password(
+class _$PasswordImpl extends _Password {
+  const _$PasswordImpl(
       {required this.validator, required this.translator, required this.value})
       : super._();
 
@@ -105,19 +136,16 @@ class _Password extends Password {
   @override
   final String value;
 
-  /// Create a copy of Password
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$PasswordCopyWith<_Password> get copyWith =>
-      __$PasswordCopyWithImpl<_Password>(this, _$identity);
+  String toString() {
+    return 'Password(validator: $validator, translator: $translator, value: $value)';
+  }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Password &&
+            other is _$PasswordImpl &&
             (identical(other.validator, validator) ||
                 other.validator == validator) &&
             (identical(other.translator, translator) ||
@@ -128,56 +156,33 @@ class _Password extends Password {
   @override
   int get hashCode => Object.hash(runtimeType, validator, translator, value);
 
+  /// Create a copy of Password
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'Password(validator: $validator, translator: $translator, value: $value)';
-  }
+  @pragma('vm:prefer-inline')
+  _$$PasswordImplCopyWith<_$PasswordImpl> get copyWith =>
+      __$$PasswordImplCopyWithImpl<_$PasswordImpl>(this, _$identity);
 }
 
-/// @nodoc
-abstract mixin class _$PasswordCopyWith<$Res>
-    implements $PasswordCopyWith<$Res> {
-  factory _$PasswordCopyWith(_Password value, $Res Function(_Password) _then) =
-      __$PasswordCopyWithImpl;
+abstract class _Password extends Password {
+  const factory _Password(
+      {required final PasswordValidator validator,
+      required final PasswordErrorTranslator translator,
+      required final String value}) = _$PasswordImpl;
+  const _Password._() : super._();
+
   @override
-  @useResult
-  $Res call(
-      {PasswordValidator validator,
-      PasswordErrorTranslator translator,
-      String value});
-}
-
-/// @nodoc
-class __$PasswordCopyWithImpl<$Res> implements _$PasswordCopyWith<$Res> {
-  __$PasswordCopyWithImpl(this._self, this._then);
-
-  final _Password _self;
-  final $Res Function(_Password) _then;
+  PasswordValidator get validator;
+  @override
+  PasswordErrorTranslator get translator;
+  @override
+  String get value;
 
   /// Create a copy of Password
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? validator = null,
-    Object? translator = null,
-    Object? value = null,
-  }) {
-    return _then(_Password(
-      validator: null == validator
-          ? _self.validator
-          : validator // ignore: cast_nullable_to_non_nullable
-              as PasswordValidator,
-      translator: null == translator
-          ? _self.translator
-          : translator // ignore: cast_nullable_to_non_nullable
-              as PasswordErrorTranslator,
-      value: null == value
-          ? _self.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PasswordImplCopyWith<_$PasswordImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-// dart format on

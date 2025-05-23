@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,49 +9,29 @@ part of 'login_form.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$LoginForm {
-  LoginFormStatus get status;
-  Email get email;
-  Password get password;
-  LoginFailure? get failure;
+  LoginFormStatus get status => throw _privateConstructorUsedError;
+  Email get email => throw _privateConstructorUsedError;
+  Password get password => throw _privateConstructorUsedError;
+  LoginFailure? get failure => throw _privateConstructorUsedError;
 
   /// Create a copy of LoginForm
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $LoginFormCopyWith<LoginForm> get copyWith =>
-      _$LoginFormCopyWithImpl<LoginForm>(this as LoginForm, _$identity);
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is LoginForm &&
-            (identical(other.status, status) || other.status == status) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.failure, failure) || other.failure == failure));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, status, email, password, failure);
-
-  @override
-  String toString() {
-    return 'LoginForm(status: $status, email: $email, password: $password, failure: $failure)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $LoginFormCopyWith<$Res> {
-  factory $LoginFormCopyWith(LoginForm value, $Res Function(LoginForm) _then) =
-      _$LoginFormCopyWithImpl;
+abstract class $LoginFormCopyWith<$Res> {
+  factory $LoginFormCopyWith(LoginForm value, $Res Function(LoginForm) then) =
+      _$LoginFormCopyWithImpl<$Res, LoginForm>;
   @useResult
   $Res call(
       {LoginFormStatus status,
@@ -65,11 +44,14 @@ abstract mixin class $LoginFormCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LoginFormCopyWithImpl<$Res> implements $LoginFormCopyWith<$Res> {
-  _$LoginFormCopyWithImpl(this._self, this._then);
+class _$LoginFormCopyWithImpl<$Res, $Val extends LoginForm>
+    implements $LoginFormCopyWith<$Res> {
+  _$LoginFormCopyWithImpl(this._value, this._then);
 
-  final LoginForm _self;
-  final $Res Function(LoginForm) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of LoginForm
   /// with the given fields replaced by the non-null parameter values.
@@ -81,24 +63,24 @@ class _$LoginFormCopyWithImpl<$Res> implements $LoginFormCopyWith<$Res> {
     Object? password = null,
     Object? failure = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       status: null == status
-          ? _self.status
+          ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as LoginFormStatus,
       email: null == email
-          ? _self.email
+          ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as Email,
       password: null == password
-          ? _self.password
+          ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as Password,
       failure: freezed == failure
-          ? _self.failure
+          ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as LoginFailure?,
-    ));
+    ) as $Val);
   }
 
   /// Create a copy of LoginForm
@@ -106,8 +88,8 @@ class _$LoginFormCopyWithImpl<$Res> implements $LoginFormCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $EmailCopyWith<$Res> get email {
-    return $EmailCopyWith<$Res>(_self.email, (value) {
-      return _then(_self.copyWith(email: value));
+    return $EmailCopyWith<$Res>(_value.email, (value) {
+      return _then(_value.copyWith(email: value) as $Val);
     });
   }
 
@@ -116,16 +98,75 @@ class _$LoginFormCopyWithImpl<$Res> implements $LoginFormCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $PasswordCopyWith<$Res> get password {
-    return $PasswordCopyWith<$Res>(_self.password, (value) {
-      return _then(_self.copyWith(password: value));
+    return $PasswordCopyWith<$Res>(_value.password, (value) {
+      return _then(_value.copyWith(password: value) as $Val);
     });
   }
 }
 
 /// @nodoc
+abstract class _$$LoginFormImplCopyWith<$Res>
+    implements $LoginFormCopyWith<$Res> {
+  factory _$$LoginFormImplCopyWith(
+          _$LoginFormImpl value, $Res Function(_$LoginFormImpl) then) =
+      __$$LoginFormImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {LoginFormStatus status,
+      Email email,
+      Password password,
+      LoginFailure? failure});
 
-class _LoginForm extends LoginForm {
-  const _LoginForm(
+  @override
+  $EmailCopyWith<$Res> get email;
+  @override
+  $PasswordCopyWith<$Res> get password;
+}
+
+/// @nodoc
+class __$$LoginFormImplCopyWithImpl<$Res>
+    extends _$LoginFormCopyWithImpl<$Res, _$LoginFormImpl>
+    implements _$$LoginFormImplCopyWith<$Res> {
+  __$$LoginFormImplCopyWithImpl(
+      _$LoginFormImpl _value, $Res Function(_$LoginFormImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of LoginForm
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = null,
+    Object? email = null,
+    Object? password = null,
+    Object? failure = freezed,
+  }) {
+    return _then(_$LoginFormImpl(
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as LoginFormStatus,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as Email,
+      password: null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as Password,
+      failure: freezed == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as LoginFailure?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoginFormImpl extends _LoginForm {
+  const _$LoginFormImpl(
       {this.status = LoginFormStatus.initial,
       this.email = Email.empty,
       this.password = Password.empty,
@@ -144,19 +185,16 @@ class _LoginForm extends LoginForm {
   @override
   final LoginFailure? failure;
 
-  /// Create a copy of LoginForm
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$LoginFormCopyWith<_LoginForm> get copyWith =>
-      __$LoginFormCopyWithImpl<_LoginForm>(this, _$identity);
+  String toString() {
+    return 'LoginForm(status: $status, email: $email, password: $password, failure: $failure)';
+  }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LoginForm &&
+            other is _$LoginFormImpl &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
@@ -168,88 +206,36 @@ class _LoginForm extends LoginForm {
   int get hashCode =>
       Object.hash(runtimeType, status, email, password, failure);
 
+  /// Create a copy of LoginForm
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'LoginForm(status: $status, email: $email, password: $password, failure: $failure)';
-  }
+  @pragma('vm:prefer-inline')
+  _$$LoginFormImplCopyWith<_$LoginFormImpl> get copyWith =>
+      __$$LoginFormImplCopyWithImpl<_$LoginFormImpl>(this, _$identity);
 }
 
-/// @nodoc
-abstract mixin class _$LoginFormCopyWith<$Res>
-    implements $LoginFormCopyWith<$Res> {
-  factory _$LoginFormCopyWith(
-          _LoginForm value, $Res Function(_LoginForm) _then) =
-      __$LoginFormCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {LoginFormStatus status,
-      Email email,
-      Password password,
-      LoginFailure? failure});
+abstract class _LoginForm extends LoginForm {
+  const factory _LoginForm(
+      {final LoginFormStatus status,
+      final Email email,
+      final Password password,
+      final LoginFailure? failure}) = _$LoginFormImpl;
+  const _LoginForm._() : super._();
 
   @override
-  $EmailCopyWith<$Res> get email;
+  LoginFormStatus get status;
   @override
-  $PasswordCopyWith<$Res> get password;
-}
-
-/// @nodoc
-class __$LoginFormCopyWithImpl<$Res> implements _$LoginFormCopyWith<$Res> {
-  __$LoginFormCopyWithImpl(this._self, this._then);
-
-  final _LoginForm _self;
-  final $Res Function(_LoginForm) _then;
+  Email get email;
+  @override
+  Password get password;
+  @override
+  LoginFailure? get failure;
 
   /// Create a copy of LoginForm
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? status = null,
-    Object? email = null,
-    Object? password = null,
-    Object? failure = freezed,
-  }) {
-    return _then(_LoginForm(
-      status: null == status
-          ? _self.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as LoginFormStatus,
-      email: null == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as Email,
-      password: null == password
-          ? _self.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as Password,
-      failure: freezed == failure
-          ? _self.failure
-          : failure // ignore: cast_nullable_to_non_nullable
-              as LoginFailure?,
-    ));
-  }
-
-  /// Create a copy of LoginForm
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $EmailCopyWith<$Res> get email {
-    return $EmailCopyWith<$Res>(_self.email, (value) {
-      return _then(_self.copyWith(email: value));
-    });
-  }
-
-  /// Create a copy of LoginForm
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $PasswordCopyWith<$Res> get password {
-    return $PasswordCopyWith<$Res>(_self.password, (value) {
-      return _then(_self.copyWith(password: value));
-    });
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LoginFormImplCopyWith<_$LoginFormImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-// dart format on

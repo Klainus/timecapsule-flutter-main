@@ -1,43 +1,47 @@
-import 'package:analytics_repository/analytics_repository.dart';
+import 'package:as_boilerplate_flutter/add_capsule/models/hive.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive/hive.dart';
 
 part 'capsule_event.dart';
 part 'capsule_state.dart';
 
 class CreateCapsuleBloc extends Bloc<CreateCapsuleEvent, CreateCapsuleState> {
-  CreateCapsuleBloc({this.analyticsRepository})
-      : super(const CreateCapsuleState()) {
-    on<CapsuleTitleChanged>(_onTitleChanged);
-    on<CapsuleSubmitted>(_onSubmitted);
-  }
-  final AnalyticsRepository? analyticsRepository;
-
-  void _onTitleChanged(
-    CapsuleTitleChanged event,
-    Emitter<CreateCapsuleState> emit,
-  ) {
-    emit(
-      state.copyWith(
-        title: event.title,
-      ),
-    );
+  CreateCapsuleBloc() : super(const CreateCapsuleState()) {
+    on<SaveCapsuleEvent>(_onSaveCapsule);
+    on<LoadCapsulesEvent>(_onLoadCapsules);
   }
 
-  Future<void> _onSubmitted(
-    CapsuleSubmitted event,
+  Future<void> _onSaveCapsule(
+    SaveCapsuleEvent event,
     Emitter<CreateCapsuleState> emit,
   ) async {
-    emit(
-      state.copyWith(isSubmitting: true, isFailure: false, isSuccess: false),
-    );
-
     try {
-      // TODO: Call your API to create a capsule here
-      await Future.delayed(const Duration(seconds: 2));
+      emit(state.copyWith(isSubmitting: true));
+      final box = Hive.box<TimeCapsule>('capsules');
+      await box.add(event.capsule);
+      add(const LoadCapsulesEvent());
+    } catch (e) {
+      emit(state.copyWith(isSubmitting: false, isFailure: true));
+    }
+  }
 
-      emit(state.copyWith(isSubmitting: false, isSuccess: true));
-    } catch (_) {
+  Future<void> _onLoadCapsules(
+    LoadCapsulesEvent event,
+    Emitter<CreateCapsuleState> emit,
+  ) async {
+    emit(state.copyWith(isSubmitting: true));
+    try {
+      final box = Hive.box<TimeCapsule>('capsules');
+      final capsules = box.values.toList();
+      emit(
+        state.copyWith(
+          isSubmitting: false,
+          isSuccess: true,
+          title: 'Capsules Loaded',
+        ),
+      );
+    } catch (e) {
       emit(state.copyWith(isSubmitting: false, isFailure: true));
     }
   }

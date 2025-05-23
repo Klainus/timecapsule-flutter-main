@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,45 +9,28 @@ part of 'authentication_state.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$AuthenticationState {
-  AuthenticationStatus get status;
-  User get user;
+  AuthenticationStatus get status => throw _privateConstructorUsedError;
+  User get user => throw _privateConstructorUsedError;
 
   /// Create a copy of AuthenticationState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $AuthenticationStateCopyWith<AuthenticationState> get copyWith =>
-      _$AuthenticationStateCopyWithImpl<AuthenticationState>(
-          this as AuthenticationState, _$identity);
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is AuthenticationState &&
-            (identical(other.status, status) || other.status == status) &&
-            (identical(other.user, user) || other.user == user));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, status, user);
-
-  @override
-  String toString() {
-    return 'AuthenticationState(status: $status, user: $user)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $AuthenticationStateCopyWith<$Res> {
+abstract class $AuthenticationStateCopyWith<$Res> {
   factory $AuthenticationStateCopyWith(
-          AuthenticationState value, $Res Function(AuthenticationState) _then) =
-      _$AuthenticationStateCopyWithImpl;
+          AuthenticationState value, $Res Function(AuthenticationState) then) =
+      _$AuthenticationStateCopyWithImpl<$Res, AuthenticationState>;
   @useResult
   $Res call({AuthenticationStatus status, User user});
 
@@ -56,12 +38,14 @@ abstract mixin class $AuthenticationStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AuthenticationStateCopyWithImpl<$Res>
+class _$AuthenticationStateCopyWithImpl<$Res, $Val extends AuthenticationState>
     implements $AuthenticationStateCopyWith<$Res> {
-  _$AuthenticationStateCopyWithImpl(this._self, this._then);
+  _$AuthenticationStateCopyWithImpl(this._value, this._then);
 
-  final AuthenticationState _self;
-  final $Res Function(AuthenticationState) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of AuthenticationState
   /// with the given fields replaced by the non-null parameter values.
@@ -71,16 +55,16 @@ class _$AuthenticationStateCopyWithImpl<$Res>
     Object? status = null,
     Object? user = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       status: null == status
-          ? _self.status
+          ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as AuthenticationStatus,
       user: null == user
-          ? _self.user
+          ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
-    ));
+    ) as $Val);
   }
 
   /// Create a copy of AuthenticationState
@@ -88,36 +72,75 @@ class _$AuthenticationStateCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_self.user, (value) {
-      return _then(_self.copyWith(user: value));
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value) as $Val);
     });
   }
 }
 
 /// @nodoc
+abstract class _$$AuthenticationStateImplCopyWith<$Res>
+    implements $AuthenticationStateCopyWith<$Res> {
+  factory _$$AuthenticationStateImplCopyWith(_$AuthenticationStateImpl value,
+          $Res Function(_$AuthenticationStateImpl) then) =
+      __$$AuthenticationStateImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({AuthenticationStatus status, User user});
 
-class _AuthenticationState implements AuthenticationState {
-  const _AuthenticationState({required this.status, required this.user});
+  @override
+  $UserCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class __$$AuthenticationStateImplCopyWithImpl<$Res>
+    extends _$AuthenticationStateCopyWithImpl<$Res, _$AuthenticationStateImpl>
+    implements _$$AuthenticationStateImplCopyWith<$Res> {
+  __$$AuthenticationStateImplCopyWithImpl(_$AuthenticationStateImpl _value,
+      $Res Function(_$AuthenticationStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AuthenticationState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = null,
+    Object? user = null,
+  }) {
+    return _then(_$AuthenticationStateImpl(
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as AuthenticationStatus,
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AuthenticationStateImpl implements _AuthenticationState {
+  const _$AuthenticationStateImpl({required this.status, required this.user});
 
   @override
   final AuthenticationStatus status;
   @override
   final User user;
 
-  /// Create a copy of AuthenticationState
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$AuthenticationStateCopyWith<_AuthenticationState> get copyWith =>
-      __$AuthenticationStateCopyWithImpl<_AuthenticationState>(
-          this, _$identity);
+  String toString() {
+    return 'AuthenticationState(status: $status, user: $user)';
+  }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AuthenticationState &&
+            other is _$AuthenticationStateImpl &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.user, user) || other.user == user));
   }
@@ -125,63 +148,30 @@ class _AuthenticationState implements AuthenticationState {
   @override
   int get hashCode => Object.hash(runtimeType, status, user);
 
+  /// Create a copy of AuthenticationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'AuthenticationState(status: $status, user: $user)';
-  }
+  @pragma('vm:prefer-inline')
+  _$$AuthenticationStateImplCopyWith<_$AuthenticationStateImpl> get copyWith =>
+      __$$AuthenticationStateImplCopyWithImpl<_$AuthenticationStateImpl>(
+          this, _$identity);
 }
 
-/// @nodoc
-abstract mixin class _$AuthenticationStateCopyWith<$Res>
-    implements $AuthenticationStateCopyWith<$Res> {
-  factory _$AuthenticationStateCopyWith(_AuthenticationState value,
-          $Res Function(_AuthenticationState) _then) =
-      __$AuthenticationStateCopyWithImpl;
-  @override
-  @useResult
-  $Res call({AuthenticationStatus status, User user});
+abstract class _AuthenticationState implements AuthenticationState {
+  const factory _AuthenticationState(
+      {required final AuthenticationStatus status,
+      required final User user}) = _$AuthenticationStateImpl;
 
   @override
-  $UserCopyWith<$Res> get user;
-}
-
-/// @nodoc
-class __$AuthenticationStateCopyWithImpl<$Res>
-    implements _$AuthenticationStateCopyWith<$Res> {
-  __$AuthenticationStateCopyWithImpl(this._self, this._then);
-
-  final _AuthenticationState _self;
-  final $Res Function(_AuthenticationState) _then;
+  AuthenticationStatus get status;
+  @override
+  User get user;
 
   /// Create a copy of AuthenticationState
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? status = null,
-    Object? user = null,
-  }) {
-    return _then(_AuthenticationState(
-      status: null == status
-          ? _self.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as AuthenticationStatus,
-      user: null == user
-          ? _self.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
-    ));
-  }
-
-  /// Create a copy of AuthenticationState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_self.user, (value) {
-      return _then(_self.copyWith(user: value));
-    });
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AuthenticationStateImplCopyWith<_$AuthenticationStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-// dart format on
