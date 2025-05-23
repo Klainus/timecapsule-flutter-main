@@ -46,7 +46,7 @@ class _Body extends StatelessWidget {
                 create: (context) => CreateCapsuleBloc(),
                 child: const CreateCapsulePage(),
               ),
-            AppTab.home => const CounterPage(),
+            AppTab.home => HomePage(),
             AppTab.settings => const SettingsPage(),
           },
       ],

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:analytics_repository/analytics_repository.dart';
 import 'package:app_client_platform_configuration/app_client_platform_configuration.dart';
 import 'package:app_logging/app_logging.dart';
+import 'package:as_boilerplate_flutter/add_capsule/models/hive.dart';
 import 'package:as_boilerplate_flutter/app/app_bloc_observer.dart';
 import 'package:as_boilerplate_flutter/app/view/app.dart';
 import 'package:authentication_repository/authentication_repository.dart';
@@ -12,6 +13,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:user_repository/user_repository.dart';
@@ -23,6 +25,7 @@ Future<void> bootstrap({
   required FirebaseOptions firebaseOptions,
   void Function(String?)? debugPrint,
 }) async {
+  print('bootstrap started');
   await ErrorTracking.init(
     debug: debug,
     environment: environment,
@@ -41,6 +44,29 @@ Future<void> bootstrap({
         FirebaseAnalytics.instance,
         debug: debug,
       );
+
+      await Hive.initFlutter();
+
+      Hive.registerAdapter(TimeCapsuleAdapter());
+
+      final sampleCapsule = TimeCapsule(
+        thoughts: 'Sample thoughts',
+        revealDate: DateTime.now().add(const Duration(days: 1)),
+        title: 'Sample title',
+      );
+
+      final box = await Hive.openBox<TimeCapsule>('capsules');
+      await box.add(sampleCapsule);
+      print('Hive opened ${box.isOpen}');
+
+      // Retrieve the first item
+      final firstCapsule = box.getAt(0);
+      print('First capsule: ${firstCapsule?.title}, ${firstCapsule?.thoughts}');
+
+      for (var i = 0; i < box.length; i++) {
+        final capsule = box.getAt(i);
+        print('Capsule $i: ${capsule?.title}, ${capsule?.thoughts}');
+      }
 
       Bloc.observer = AppBlocObserver(
         AppLogging.logger,

@@ -3,6 +3,7 @@ import 'package:as_boilerplate_flutter/firebase_options_dev.dart';
 import 'package:flutter/foundation.dart';
 
 Future<void> main() async {
+  print('main started');
   await bootstrap(
     debug: true,
     debugPrint: debugPrint,

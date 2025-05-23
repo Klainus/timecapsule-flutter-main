@@ -17,18 +17,21 @@ class TimeCapsuleAdapter extends TypeAdapter<TimeCapsule> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return TimeCapsule(
-      thoughts: fields[0] as String,
-      revealDate: fields[1] as DateTime,
+      thoughts: fields[1] as String,
+      title: fields[0] as String,
+      revealDate: fields[2] as DateTime,
     );
   }
 
   @override
   void write(BinaryWriter writer, TimeCapsule obj) {
     writer
-      ..writeByte(2)
+      ..writeByte(3)
       ..writeByte(0)
-      ..write(obj.thoughts)
+      ..write(obj.title)
       ..writeByte(1)
+      ..write(obj.thoughts)
+      ..writeByte(2)
       ..write(obj.revealDate);
   }
 

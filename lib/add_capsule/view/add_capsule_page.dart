@@ -1,7 +1,6 @@
-import 'package:as_boilerplate_flutter/add_capsule/bloc/capsule_bloc.dart'; // Adjust path as needed
 import 'package:as_boilerplate_flutter/add_capsule/models/hive.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive/hive.dart';
 
 class CreateCapsulePage extends StatefulWidget {
   const CreateCapsulePage({super.key});
@@ -12,6 +11,7 @@ class CreateCapsulePage extends StatefulWidget {
 
 class _CreateCapsulePageState extends State<CreateCapsulePage> {
   final TextEditingController _contentController = TextEditingController();
+  final TextEditingController _titleController = TextEditingController();
   DateTime? _selectedDate;
 
   @override
@@ -35,7 +35,8 @@ class _CreateCapsulePageState extends State<CreateCapsulePage> {
     }
   }
 
-  void _submit() {
+  Future<void> _submit() async {
+    final title = _titleController.text.trim();
     final content = _contentController.text.trim();
     final unlockDate = _selectedDate;
 
@@ -50,9 +51,10 @@ class _CreateCapsulePageState extends State<CreateCapsulePage> {
       );
     }
 
-    final capsule = TimeCapsule(thoughts: content, revealDate: unlockDate);
-
-    context.read<CreateCapsuleBloc>().add(SaveCapsuleEvent(capsule));
+    final capsule =
+        TimeCapsule(thoughts: content, revealDate: unlockDate, title: title);
+    final box = await Hive.openBox<TimeCapsule>('capsules');
+    await box.add(capsule);
   }
 
   @override
