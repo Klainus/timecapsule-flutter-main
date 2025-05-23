@@ -49,25 +49,6 @@ Future<void> bootstrap({
 
       Hive.registerAdapter(TimeCapsuleAdapter());
 
-      final sampleCapsule = TimeCapsule(
-        thoughts: 'Sample thoughts',
-        revealDate: DateTime.now().add(const Duration(days: 1)),
-        title: 'Sample title',
-      );
-
-      final box = await Hive.openBox<TimeCapsule>('capsules');
-      await box.add(sampleCapsule);
-      print('Hive opened ${box.isOpen}');
-
-      // Retrieve the first item
-      final firstCapsule = box.getAt(0);
-      print('First capsule: ${firstCapsule?.title}, ${firstCapsule?.thoughts}');
-
-      for (var i = 0; i < box.length; i++) {
-        final capsule = box.getAt(i);
-        print('Capsule $i: ${capsule?.title}, ${capsule?.thoughts}');
-      }
-
       Bloc.observer = AppBlocObserver(
         AppLogging.logger,
         analyticsRepository,
