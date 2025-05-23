@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,46 +9,28 @@ part of 'create_account_state.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$CreateAccountState {
-  CreateAccountForm get form;
-  bool get showIntro;
+  CreateAccountForm get form => throw _privateConstructorUsedError;
+  bool get showIntro => throw _privateConstructorUsedError;
 
   /// Create a copy of CreateAccountState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $CreateAccountStateCopyWith<CreateAccountState> get copyWith =>
-      _$CreateAccountStateCopyWithImpl<CreateAccountState>(
-          this as CreateAccountState, _$identity);
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is CreateAccountState &&
-            (identical(other.form, form) || other.form == form) &&
-            (identical(other.showIntro, showIntro) ||
-                other.showIntro == showIntro));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, form, showIntro);
-
-  @override
-  String toString() {
-    return 'CreateAccountState(form: $form, showIntro: $showIntro)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $CreateAccountStateCopyWith<$Res> {
+abstract class $CreateAccountStateCopyWith<$Res> {
   factory $CreateAccountStateCopyWith(
-          CreateAccountState value, $Res Function(CreateAccountState) _then) =
-      _$CreateAccountStateCopyWithImpl;
+          CreateAccountState value, $Res Function(CreateAccountState) then) =
+      _$CreateAccountStateCopyWithImpl<$Res, CreateAccountState>;
   @useResult
   $Res call({CreateAccountForm form, bool showIntro});
 
@@ -57,12 +38,14 @@ abstract mixin class $CreateAccountStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CreateAccountStateCopyWithImpl<$Res>
+class _$CreateAccountStateCopyWithImpl<$Res, $Val extends CreateAccountState>
     implements $CreateAccountStateCopyWith<$Res> {
-  _$CreateAccountStateCopyWithImpl(this._self, this._then);
+  _$CreateAccountStateCopyWithImpl(this._value, this._then);
 
-  final CreateAccountState _self;
-  final $Res Function(CreateAccountState) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of CreateAccountState
   /// with the given fields replaced by the non-null parameter values.
@@ -72,16 +55,16 @@ class _$CreateAccountStateCopyWithImpl<$Res>
     Object? form = null,
     Object? showIntro = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       form: null == form
-          ? _self.form
+          ? _value.form
           : form // ignore: cast_nullable_to_non_nullable
               as CreateAccountForm,
       showIntro: null == showIntro
-          ? _self.showIntro
+          ? _value.showIntro
           : showIntro // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 
   /// Create a copy of CreateAccountState
@@ -89,16 +72,59 @@ class _$CreateAccountStateCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $CreateAccountFormCopyWith<$Res> get form {
-    return $CreateAccountFormCopyWith<$Res>(_self.form, (value) {
-      return _then(_self.copyWith(form: value));
+    return $CreateAccountFormCopyWith<$Res>(_value.form, (value) {
+      return _then(_value.copyWith(form: value) as $Val);
     });
   }
 }
 
 /// @nodoc
+abstract class _$$CreateAccountStateImplCopyWith<$Res>
+    implements $CreateAccountStateCopyWith<$Res> {
+  factory _$$CreateAccountStateImplCopyWith(_$CreateAccountStateImpl value,
+          $Res Function(_$CreateAccountStateImpl) then) =
+      __$$CreateAccountStateImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({CreateAccountForm form, bool showIntro});
 
-class _CreateAccountState implements CreateAccountState {
-  const _CreateAccountState(
+  @override
+  $CreateAccountFormCopyWith<$Res> get form;
+}
+
+/// @nodoc
+class __$$CreateAccountStateImplCopyWithImpl<$Res>
+    extends _$CreateAccountStateCopyWithImpl<$Res, _$CreateAccountStateImpl>
+    implements _$$CreateAccountStateImplCopyWith<$Res> {
+  __$$CreateAccountStateImplCopyWithImpl(_$CreateAccountStateImpl _value,
+      $Res Function(_$CreateAccountStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CreateAccountState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? form = null,
+    Object? showIntro = null,
+  }) {
+    return _then(_$CreateAccountStateImpl(
+      form: null == form
+          ? _value.form
+          : form // ignore: cast_nullable_to_non_nullable
+              as CreateAccountForm,
+      showIntro: null == showIntro
+          ? _value.showIntro
+          : showIntro // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CreateAccountStateImpl implements _CreateAccountState {
+  const _$CreateAccountStateImpl(
       {this.form = const CreateAccountForm(), this.showIntro = false});
 
   @override
@@ -108,19 +134,16 @@ class _CreateAccountState implements CreateAccountState {
   @JsonKey()
   final bool showIntro;
 
-  /// Create a copy of CreateAccountState
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$CreateAccountStateCopyWith<_CreateAccountState> get copyWith =>
-      __$CreateAccountStateCopyWithImpl<_CreateAccountState>(this, _$identity);
+  String toString() {
+    return 'CreateAccountState(form: $form, showIntro: $showIntro)';
+  }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _CreateAccountState &&
+            other is _$CreateAccountStateImpl &&
             (identical(other.form, form) || other.form == form) &&
             (identical(other.showIntro, showIntro) ||
                 other.showIntro == showIntro));
@@ -129,63 +152,30 @@ class _CreateAccountState implements CreateAccountState {
   @override
   int get hashCode => Object.hash(runtimeType, form, showIntro);
 
+  /// Create a copy of CreateAccountState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'CreateAccountState(form: $form, showIntro: $showIntro)';
-  }
+  @pragma('vm:prefer-inline')
+  _$$CreateAccountStateImplCopyWith<_$CreateAccountStateImpl> get copyWith =>
+      __$$CreateAccountStateImplCopyWithImpl<_$CreateAccountStateImpl>(
+          this, _$identity);
 }
 
-/// @nodoc
-abstract mixin class _$CreateAccountStateCopyWith<$Res>
-    implements $CreateAccountStateCopyWith<$Res> {
-  factory _$CreateAccountStateCopyWith(
-          _CreateAccountState value, $Res Function(_CreateAccountState) _then) =
-      __$CreateAccountStateCopyWithImpl;
-  @override
-  @useResult
-  $Res call({CreateAccountForm form, bool showIntro});
+abstract class _CreateAccountState implements CreateAccountState {
+  const factory _CreateAccountState(
+      {final CreateAccountForm form,
+      final bool showIntro}) = _$CreateAccountStateImpl;
 
   @override
-  $CreateAccountFormCopyWith<$Res> get form;
-}
-
-/// @nodoc
-class __$CreateAccountStateCopyWithImpl<$Res>
-    implements _$CreateAccountStateCopyWith<$Res> {
-  __$CreateAccountStateCopyWithImpl(this._self, this._then);
-
-  final _CreateAccountState _self;
-  final $Res Function(_CreateAccountState) _then;
+  CreateAccountForm get form;
+  @override
+  bool get showIntro;
 
   /// Create a copy of CreateAccountState
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? form = null,
-    Object? showIntro = null,
-  }) {
-    return _then(_CreateAccountState(
-      form: null == form
-          ? _self.form
-          : form // ignore: cast_nullable_to_non_nullable
-              as CreateAccountForm,
-      showIntro: null == showIntro
-          ? _self.showIntro
-          : showIntro // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-
-  /// Create a copy of CreateAccountState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $CreateAccountFormCopyWith<$Res> get form {
-    return $CreateAccountFormCopyWith<$Res>(_self.form, (value) {
-      return _then(_self.copyWith(form: value));
-    });
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CreateAccountStateImplCopyWith<_$CreateAccountStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-// dart format on

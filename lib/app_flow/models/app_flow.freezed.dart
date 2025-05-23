@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,62 +9,46 @@ part of 'app_flow.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+AppFlow _$AppFlowFromJson(Map<String, dynamic> json) {
+  return _AppFlow.fromJson(json);
+}
 
 /// @nodoc
 mixin _$AppFlow {
-  bool get isLoggedIn;
-  bool get isEnableAnalyticsCompleted;
+  bool get isLoggedIn => throw _privateConstructorUsedError;
+  bool get isEnableAnalyticsCompleted => throw _privateConstructorUsedError;
+
+  /// Serializes this AppFlow to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of AppFlow
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $AppFlowCopyWith<AppFlow> get copyWith =>
-      _$AppFlowCopyWithImpl<AppFlow>(this as AppFlow, _$identity);
-
-  /// Serializes this AppFlow to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is AppFlow &&
-            (identical(other.isLoggedIn, isLoggedIn) ||
-                other.isLoggedIn == isLoggedIn) &&
-            (identical(other.isEnableAnalyticsCompleted,
-                    isEnableAnalyticsCompleted) ||
-                other.isEnableAnalyticsCompleted ==
-                    isEnableAnalyticsCompleted));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, isLoggedIn, isEnableAnalyticsCompleted);
-
-  @override
-  String toString() {
-    return 'AppFlow(isLoggedIn: $isLoggedIn, isEnableAnalyticsCompleted: $isEnableAnalyticsCompleted)';
-  }
+  $AppFlowCopyWith<AppFlow> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $AppFlowCopyWith<$Res> {
-  factory $AppFlowCopyWith(AppFlow value, $Res Function(AppFlow) _then) =
-      _$AppFlowCopyWithImpl;
+abstract class $AppFlowCopyWith<$Res> {
+  factory $AppFlowCopyWith(AppFlow value, $Res Function(AppFlow) then) =
+      _$AppFlowCopyWithImpl<$Res, AppFlow>;
   @useResult
   $Res call({bool isLoggedIn, bool isEnableAnalyticsCompleted});
 }
 
 /// @nodoc
-class _$AppFlowCopyWithImpl<$Res> implements $AppFlowCopyWith<$Res> {
-  _$AppFlowCopyWithImpl(this._self, this._then);
+class _$AppFlowCopyWithImpl<$Res, $Val extends AppFlow>
+    implements $AppFlowCopyWith<$Res> {
+  _$AppFlowCopyWithImpl(this._value, this._then);
 
-  final AppFlow _self;
-  final $Res Function(AppFlow) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of AppFlow
   /// with the given fields replaced by the non-null parameter values.
@@ -75,13 +58,52 @@ class _$AppFlowCopyWithImpl<$Res> implements $AppFlowCopyWith<$Res> {
     Object? isLoggedIn = null,
     Object? isEnableAnalyticsCompleted = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       isLoggedIn: null == isLoggedIn
-          ? _self.isLoggedIn
+          ? _value.isLoggedIn
           : isLoggedIn // ignore: cast_nullable_to_non_nullable
               as bool,
       isEnableAnalyticsCompleted: null == isEnableAnalyticsCompleted
-          ? _self.isEnableAnalyticsCompleted
+          ? _value.isEnableAnalyticsCompleted
+          : isEnableAnalyticsCompleted // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AppFlowImplCopyWith<$Res> implements $AppFlowCopyWith<$Res> {
+  factory _$$AppFlowImplCopyWith(
+          _$AppFlowImpl value, $Res Function(_$AppFlowImpl) then) =
+      __$$AppFlowImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({bool isLoggedIn, bool isEnableAnalyticsCompleted});
+}
+
+/// @nodoc
+class __$$AppFlowImplCopyWithImpl<$Res>
+    extends _$AppFlowCopyWithImpl<$Res, _$AppFlowImpl>
+    implements _$$AppFlowImplCopyWith<$Res> {
+  __$$AppFlowImplCopyWithImpl(
+      _$AppFlowImpl _value, $Res Function(_$AppFlowImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AppFlow
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isLoggedIn = null,
+    Object? isEnableAnalyticsCompleted = null,
+  }) {
+    return _then(_$AppFlowImpl(
+      isLoggedIn: null == isLoggedIn
+          ? _value.isLoggedIn
+          : isLoggedIn // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isEnableAnalyticsCompleted: null == isEnableAnalyticsCompleted
+          ? _value.isEnableAnalyticsCompleted
           : isEnableAnalyticsCompleted // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
@@ -90,12 +112,13 @@ class _$AppFlowCopyWithImpl<$Res> implements $AppFlowCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _AppFlow extends AppFlow {
-  const _AppFlow(
+class _$AppFlowImpl extends _AppFlow {
+  const _$AppFlowImpl(
       {this.isLoggedIn = false, this.isEnableAnalyticsCompleted = false})
       : super._();
-  factory _AppFlow.fromJson(Map<String, dynamic> json) =>
-      _$AppFlowFromJson(json);
+
+  factory _$AppFlowImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AppFlowImplFromJson(json);
 
   @override
   @JsonKey()
@@ -104,26 +127,16 @@ class _AppFlow extends AppFlow {
   @JsonKey()
   final bool isEnableAnalyticsCompleted;
 
-  /// Create a copy of AppFlow
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$AppFlowCopyWith<_AppFlow> get copyWith =>
-      __$AppFlowCopyWithImpl<_AppFlow>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$AppFlowToJson(
-      this,
-    );
+  String toString() {
+    return 'AppFlow(isLoggedIn: $isLoggedIn, isEnableAnalyticsCompleted: $isEnableAnalyticsCompleted)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AppFlow &&
+            other is _$AppFlowImpl &&
             (identical(other.isLoggedIn, isLoggedIn) ||
                 other.isLoggedIn == isLoggedIn) &&
             (identical(other.isEnableAnalyticsCompleted,
@@ -137,47 +150,39 @@ class _AppFlow extends AppFlow {
   int get hashCode =>
       Object.hash(runtimeType, isLoggedIn, isEnableAnalyticsCompleted);
 
+  /// Create a copy of AppFlow
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'AppFlow(isLoggedIn: $isLoggedIn, isEnableAnalyticsCompleted: $isEnableAnalyticsCompleted)';
+  @pragma('vm:prefer-inline')
+  _$$AppFlowImplCopyWith<_$AppFlowImpl> get copyWith =>
+      __$$AppFlowImplCopyWithImpl<_$AppFlowImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AppFlowImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$AppFlowCopyWith<$Res> implements $AppFlowCopyWith<$Res> {
-  factory _$AppFlowCopyWith(_AppFlow value, $Res Function(_AppFlow) _then) =
-      __$AppFlowCopyWithImpl;
+abstract class _AppFlow extends AppFlow {
+  const factory _AppFlow(
+      {final bool isLoggedIn,
+      final bool isEnableAnalyticsCompleted}) = _$AppFlowImpl;
+  const _AppFlow._() : super._();
+
+  factory _AppFlow.fromJson(Map<String, dynamic> json) = _$AppFlowImpl.fromJson;
+
   @override
-  @useResult
-  $Res call({bool isLoggedIn, bool isEnableAnalyticsCompleted});
-}
-
-/// @nodoc
-class __$AppFlowCopyWithImpl<$Res> implements _$AppFlowCopyWith<$Res> {
-  __$AppFlowCopyWithImpl(this._self, this._then);
-
-  final _AppFlow _self;
-  final $Res Function(_AppFlow) _then;
+  bool get isLoggedIn;
+  @override
+  bool get isEnableAnalyticsCompleted;
 
   /// Create a copy of AppFlow
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? isLoggedIn = null,
-    Object? isEnableAnalyticsCompleted = null,
-  }) {
-    return _then(_AppFlow(
-      isLoggedIn: null == isLoggedIn
-          ? _self.isLoggedIn
-          : isLoggedIn // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isEnableAnalyticsCompleted: null == isEnableAnalyticsCompleted
-          ? _self.isEnableAnalyticsCompleted
-          : isEnableAnalyticsCompleted // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AppFlowImplCopyWith<_$AppFlowImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-// dart format on

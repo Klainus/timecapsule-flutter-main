@@ -1,3 +1,4 @@
+import 'package:as_boilerplate_flutter/add_capsule/bloc/capsule_bloc.dart';
 import 'package:as_boilerplate_flutter/add_capsule/view/add_capsule_page.dart';
 import 'package:as_boilerplate_flutter/app_tab/app_tab.dart';
 import 'package:as_boilerplate_flutter/app_tab/widgets/app_navigation_bar.dart';
@@ -41,8 +42,11 @@ class _Body extends StatelessWidget {
       children: [
         for (final tab in AppTab.values)
           switch (tab) {
-            AppTab.timecapsule => const CreateCapsulePage(),
-            AppTab.home => const CounterPage(),
+            AppTab.timecapsule => BlocProvider(
+                create: (context) => CreateCapsuleBloc(),
+                child: const CreateCapsulePage(),
+              ),
+            AppTab.home => HomePage(),
             AppTab.settings => const SettingsPage(),
           },
       ],

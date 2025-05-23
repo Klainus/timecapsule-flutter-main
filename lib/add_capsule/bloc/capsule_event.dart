@@ -1,18 +1,20 @@
 part of 'capsule_bloc.dart';
 
-abstract class CreateCapsuleEvent extends Equatable {
+class CreateCapsuleEvent extends Equatable {
   const CreateCapsuleEvent();
 
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [];
 }
 
-class CapsuleTitleChanged extends CreateCapsuleEvent {
-  const CapsuleTitleChanged(this.title);
-  final String title;
+final class SaveCapsuleEvent extends CreateCapsuleEvent {
+  const SaveCapsuleEvent(this.capsule);
+  final TimeCapsule capsule;
 
   @override
-  List<Object> get props => [title];
+  List<Object?> get props => [capsule];
 }
 
-class CapsuleSubmitted extends CreateCapsuleEvent {}
+final class LoadCapsulesEvent extends CreateCapsuleEvent {
+  const LoadCapsulesEvent();
+}
