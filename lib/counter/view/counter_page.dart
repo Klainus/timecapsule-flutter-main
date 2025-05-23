@@ -1,5 +1,5 @@
 import 'package:as_boilerplate_flutter/add_capsule/models/hive.dart';
-import 'package:as_boilerplate_flutter/theme/theme.dart';
+import 'package:as_boilerplate_flutter/counter/widgets/capsule_card.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
             appBar: AppBar(
               title: const Text('Time Capsules'),
               centerTitle: true,
-              backgroundColor: AppColors.primary,
+              backgroundColor: Colors.blueAccent,
             ),
             body: ValueListenableBuilder(
               valueListenable: box.listenable(),
@@ -36,57 +36,29 @@ class HomePage extends StatelessWidget {
                   return const Center(
                     child: Text(
                       'No capsules yet!',
-                      style:
-                          TextStyle(fontSize: 18, color: AppColors.background),
+                      style: TextStyle(fontSize: 18, color: Colors.grey),
                     ),
                   );
                 } else {
-                  return ListView.builder(
+                  return GridView.builder(
                     padding: const EdgeInsets.all(10),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2, // Number of columns
+                      crossAxisSpacing: 10, // Spacing between columns
+                      mainAxisSpacing: 10, // Spacing between rows
+                      childAspectRatio: 0.8, // Adjust card height/width ratio
+                    ),
                     itemCount: box.length,
                     itemBuilder: (context, index) {
                       final capsule = box.getAt(index);
-                      return Card(
-                        elevation: 4,
-                        margin: const EdgeInsets.symmetric(vertical: 8),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: ListTile(
-                          contentPadding: const EdgeInsets.all(16),
-                          title: Text(
-                            capsule?.title ?? 'No Title',
-                            style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          subtitle: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const SizedBox(height: 8),
-                              Text(
-                                capsule?.thoughts ?? 'No Thoughts',
-                                style: const TextStyle(fontSize: 16),
-                              ),
-                              const SizedBox(height: 8),
-                              Text(
-                                'Reveal Date: ${capsule?.revealDate.toString() ?? 'No Date'}',
-                                style: const TextStyle(
-                                  fontSize: 14,
-                                  color: Colors.grey,
-                                ),
-                              ),
-                            ],
-                          ),
-                          trailing: const Icon(
-                            Icons.arrow_forward_ios,
-                            color: Colors.blueAccent,
-                          ),
-                          onTap: () {
-                            // Handle tap (e.g., navigate to details page)
-                          },
-                        ),
+                      return CapsuleCard(
+                        title: capsule?.title ?? 'No Title',
+                        thoughts: capsule?.thoughts ?? 'No Thoughts',
+                        revealDate: capsule?.revealDate ?? DateTime.now(),
+                        onTap: () {
+                          // Handle card tap (e.g., navigate to details page)
+                        },
                       );
                     },
                   );
