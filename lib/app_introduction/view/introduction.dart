@@ -22,7 +22,7 @@ class IntroScreen extends StatelessWidget {
             title: 'Welcome to Time Capsule',
             description:
                 'Discover the basic features to capture your own thoughts.',
-            background: 'assets/images/magic_gradient.png',
+            background: 'assets/images/test_meteor.png',
           ),
           const IntroPage(
             title: 'What you can do',
