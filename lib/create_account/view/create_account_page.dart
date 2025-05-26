@@ -27,6 +27,7 @@ class CreateAccountPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final color = context.theme.colorScheme;
     return BlocListener<CreateAccountBloc, CreateAccountState>(
       listenWhen: (previous, current) =>
           !previous.form.status.isSuccess && current.form.status.isSuccess,
@@ -43,9 +44,10 @@ class CreateAccountPage extends StatelessWidget {
           );
         }
       },
-      child: const Scaffold(
-        appBar: BaseAppBar(),
-        body: _Body(),
+      child: Scaffold(
+        backgroundColor: color.surface,
+        appBar: const BaseAppBar(),
+        body: const _Body(),
       ),
     );
   }
