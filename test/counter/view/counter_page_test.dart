@@ -29,7 +29,7 @@ void main() {
         navigator: navigator,
         child: BlocProvider.value(
           value: counterBloc,
-          child: CounterView(),
+          child: HomePage(),
         ),
       );
     }
@@ -37,9 +37,9 @@ void main() {
     group('route', () {
       testWidgets('renders CounterPage', (tester) async {
         await tester.pumpApp(
-          CounterPage(),
+          HomePage(),
         );
-        expect(find.byType(CounterPage), findsOneWidget);
+        expect(find.byType(HomePage), findsOneWidget);
       });
     });
 

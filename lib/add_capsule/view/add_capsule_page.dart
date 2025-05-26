@@ -66,6 +66,14 @@ class _CreateCapsulePageState extends State<CreateCapsulePage> {
         child: Column(
           children: [
             TextField(
+              controller: _titleController,
+              decoration: const InputDecoration(
+                labelText: 'Capsule Title',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            const SizedBox(height: 25),
+            TextField(
               controller: _contentController,
               maxLines: 5,
               decoration: const InputDecoration(

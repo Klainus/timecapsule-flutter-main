@@ -4,7 +4,7 @@ import 'dart:async';
 
 import 'package:as_boilerplate_flutter/app_flow/app_flow.dart';
 import 'package:as_boilerplate_flutter/app_flow/widgets/app_flow_listener.dart';
-import 'package:as_boilerplate_flutter/counter/view/counter_page.dart';
+import 'package:as_boilerplate_flutter/counter/view/home_page.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -93,7 +93,7 @@ void main() {
         );
 
         await tester.pumpAndSettle();
-        expect(find.byType(CounterView), findsOneWidget);
+        expect(find.byType(HomePage), findsOneWidget);
 
         verify(
           () => navigatorObserver.didRemove(any(), any()),

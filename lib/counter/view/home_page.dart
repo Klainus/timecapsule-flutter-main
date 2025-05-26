@@ -1,5 +1,7 @@
 import 'package:as_boilerplate_flutter/add_capsule/models/hive.dart';
 import 'package:as_boilerplate_flutter/counter/widgets/capsule_card.dart';
+import 'package:as_boilerplate_flutter/counter/widgets/capsule_deletion_modal.dart';
+import 'package:as_boilerplate_flutter/counter/widgets/capsule_details_modal.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -43,33 +45,41 @@ class HomePage extends StatelessWidget {
                     padding: const EdgeInsets.all(10),
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2, // Number of columns
-                      crossAxisSpacing: 10, // Spacing between columns
-                      mainAxisSpacing: 10, // Spacing between rows
-                      childAspectRatio: 0.8, // Adjust card height/width ratio
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10,
+                      childAspectRatio: 0.8,
                     ),
                     itemCount: box.length,
                     itemBuilder: (context, index) {
                       final capsule = box.getAt(index);
                       return CapsuleCard(
+                        onDelete: () {
+                          CapsuleDeletionConfirmation
+                              .showDeleteConfirmationDialog(
+                            context: context,
+                            onDelete: () {
+                              box.deleteAt(index);
+                            },
+                          );
+                        },
                         title: capsule?.title ?? 'No Title',
                         thoughts: capsule?.thoughts ?? 'No Thoughts',
                         revealDate: capsule?.revealDate ?? DateTime.now(),
                         onTap: () {
-                          // Handle card tap (e.g., navigate to details page)
+                          CapsuleDetailsBottomSheet.show(
+                            context: context,
+                            capsule: capsule,
+                            onDelete: () {
+                              box.deleteAt(index);
+                            },
+                          );
                         },
                       );
                     },
                   );
                 }
               },
-            ),
-            floatingActionButton: FloatingActionButton(
-              onPressed: () {
-                // Add functionality to create a new capsule
-              },
-              backgroundColor: Colors.blueAccent,
-              child: const Icon(Icons.add),
             ),
           );
         }
