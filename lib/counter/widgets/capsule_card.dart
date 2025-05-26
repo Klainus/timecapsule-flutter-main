@@ -6,18 +6,60 @@ class CapsuleCard extends StatelessWidget {
     required this.title,
     required this.thoughts,
     required this.revealDate,
+    required this.onDelete, // Callback for deletion
     super.key,
     this.onTap,
   });
+
   final String title;
   final String thoughts;
   final DateTime revealDate;
   final VoidCallback? onTap;
+  final VoidCallback onDelete;
+
+  bool get isUnlocked => DateTime.now().isAfter(revealDate);
+
+  void _handleTap(BuildContext context) {
+    if (isUnlocked) {
+      if (onTap != null) {
+        onTap!();
+      }
+    } else {
+      _showDeleteConfirmationDialog(context);
+    }
+  }
+
+  void _showDeleteConfirmationDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Delete Capsule'),
+          content: const Text(
+            'This capsule is locked. Do you want to delete it?',
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                onDelete();
+              },
+              child: const Text('Delete'),
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () => _handleTap(context), // Handle tap based on lock status
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
@@ -35,25 +77,23 @@ class CapsuleCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Icon or Leading Element
               Container(
                 padding: const EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  color: Colors.blueAccent.withOpacity(0.1),
+                decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                 ),
-                child: const Icon(
+                child: Icon(
                   Icons.lock_clock,
-                  color: Colors.blueAccent,
-                  size: 24, // Smaller icon size
+                  color: isUnlocked ? Colors.green : Colors.grey,
+                  size: 24,
                 ),
               ),
               const SizedBox(height: 8),
-              // Title
+
               Text(
                 title,
                 style: const TextStyle(
-                  fontSize: 14, // Smaller font size
+                  fontSize: 14,
                   fontWeight: FontWeight.bold,
                   color: Colors.black87,
                 ),
@@ -63,16 +103,16 @@ class CapsuleCard extends StatelessWidget {
               const SizedBox(height: 4),
               // Thoughts
               Text(
-                thoughts,
-                style: const TextStyle(
-                  fontSize: 12, // Smaller font size
-                  color: Colors.black54,
+                isUnlocked ? thoughts : 'Locked content',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: isUnlocked ? Colors.black54 : Colors.grey,
+                  fontStyle: isUnlocked ? FontStyle.normal : FontStyle.italic,
                 ),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
               const Spacer(),
-              // Reveal Date
               CountdownTimer(revealDate: revealDate),
             ],
           ),

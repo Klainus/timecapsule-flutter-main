@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 class CountdownTimer extends StatefulWidget {
   const CountdownTimer({required this.revealDate, super.key});
@@ -52,7 +52,13 @@ class _CountdownTimerState extends State<CountdownTimer> {
   Widget build(BuildContext context) {
     return Text(
       _timeRemaining.isNegative ? 'Unlocked!' : _formatDuration(_timeRemaining),
-      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+      style: TextStyle(
+        color: _timeRemaining.isNegative
+            ? const Color.fromARGB(255, 81, 215, 85)
+            : Colors.deepOrange,
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+      ),
     );
   }
 }

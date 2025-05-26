@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, avoid_redundant_argument_values
 
 import 'package:as_boilerplate_flutter/app_tab/app_tab.dart';
-import 'package:as_boilerplate_flutter/counter/view/counter_page.dart';
+import 'package:as_boilerplate_flutter/counter/view/home_page.dart';
 import 'package:as_boilerplate_flutter/settings/view/settings_page.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
@@ -60,7 +60,7 @@ void main() {
           (tester) async {
         when(() => appTabBloc.state).thenReturn(AppTab.home);
         await tester.pumpApp(buildSubject());
-        expect(find.byType(CounterPage), findsOneWidget);
+        expect(find.byType(HomePage), findsOneWidget);
       });
 
       testWidgets('renders SettingsTab when AppTab.settings is selected',
