@@ -136,8 +136,13 @@ abstract class AppTheme {
       );
 
   AppBarTheme get _appBarTheme => AppBarTheme(
-        backgroundColor: _colorScheme.surface,
+        backgroundColor: _colorScheme.primary,
         elevation: 0,
+        titleTextStyle: TextStyle(
+          color: _colorScheme.onPrimary,
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        ),
       );
 }
 

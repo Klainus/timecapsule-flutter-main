@@ -6,6 +6,7 @@ abstract class AppColors {
   Brightness get brightness;
   Color get primary;
   Color get onPrimary;
+  Color get background;
   Color get secondary;
   Color get onSecondary;
   Color get error;

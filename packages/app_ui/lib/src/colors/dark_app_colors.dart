@@ -10,10 +10,13 @@ class DarkAppColors extends AppColors {
   Brightness get brightness => Brightness.dark;
 
   @override
-  Color get surface => Colors.black;
+  Color get surface => const Color(0xFF1E1E1E);
 
   @override
   Color get onSurface => _light;
+
+  @override
+  Color get background => const Color(0xFF121212); // Dark Gray
 
   @override
   Color get surfaceBright => const Color(0xFF0D1316);
@@ -31,7 +34,7 @@ class DarkAppColors extends AppColors {
   Color get onSecondary => _light;
 
   @override
-  Color get tertiary => const Color(0xFF3EFCA8); // Green (Accent)
+  Color get tertiary => const Color(0xFF1E1E1E);
 
   @override
   Color get onTertiary => Colors.black;
@@ -46,7 +49,7 @@ class DarkAppColors extends AppColors {
   Color get outline => _light;
 
   @override
-  Color get outlineVariant => const Color(0xFFD5D5DE);
+  Color get outlineVariant => Colors.white70;
 
   @override
   Color get secondaryContainer => const Color(0xFF3EFCA8); // Green

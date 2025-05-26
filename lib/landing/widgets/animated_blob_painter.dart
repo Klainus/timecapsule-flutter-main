@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:as_boilerplate_flutter/theme/widgets/colors.dart';
 import 'package:flutter/material.dart';
 
 class AnimatedBlobPainter extends CustomPainter {
@@ -8,12 +9,12 @@ class AnimatedBlobPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final paint1 = Paint()..color = Colors.deepPurple.withOpacity(0.5);
-    final paint2 = Paint()..color = Colors.greenAccent.withOpacity(0.5);
-    final paint3 = Paint()..color = Colors.orangeAccent.withOpacity(0.5);
+    final paint1 = Paint()..color = AppColors.secondary.withOpacity(0.5);
+    final paint2 = Paint()..color = AppColors.primary.withOpacity(0.5);
+    final paint3 = Paint()..color = AppColors.accent.withOpacity(0.5);
 
     double floatOffset(double baseY, double amplitude, double phase) {
-      return baseY + sin(progress * 2 * pi + phase) * amplitude;
+      return baseY + sin(progress * 4 * pi + phase) * amplitude;
     }
 
     canvas

@@ -28,12 +28,12 @@ class IntroScreen extends StatelessWidget {
             title: 'What you can do',
             description:
                 'Write down your thoughts and lock them behind a date.',
-            background: 'assets/images/magic_gradient.png',
+            background: 'assets/images/test_meteor.png',
           ),
           IntroPage(
             title: 'Get Started',
             description: 'Create your first capsule and explore the app now!',
-            background: 'assets/images/magic_gradient.png',
+            background: 'assets/images/test_meteor.png',
             showButton: true,
             onButtonPressed: () {
               Navigator.of(context)

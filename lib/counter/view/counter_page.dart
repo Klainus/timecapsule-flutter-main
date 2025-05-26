@@ -27,7 +27,6 @@ class HomePage extends StatelessWidget {
             appBar: AppBar(
               title: const Text('Time Capsules'),
               centerTitle: true,
-              backgroundColor: Colors.blueAccent,
             ),
             body: ValueListenableBuilder(
               valueListenable: box.listenable(),
