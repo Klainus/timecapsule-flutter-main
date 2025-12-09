@@ -84,7 +84,7 @@ jobs:
         run: dart format .
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.TRIGGER_FURTHER_WORKFLOWS_TOKEN }}
           commit-message: "Generate api"
